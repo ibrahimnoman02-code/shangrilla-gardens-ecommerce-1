@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shangrilla Gardens & BBQ | Test & Development Quality Harness</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Site Styles & Harness Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/harness.css">
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header class="harness-header">
+    <div class="harness-header-inner">
+      <a href="index.html" class="harness-brand">
+        <div class="harness-logo-badge">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <div>
+          <div class="harness-brand-title">Shangrilla Quality &amp; Test Harness</div>
+          <div class="harness-brand-subtitle">Automated BDD Suites • State Injector • Component Sandbox</div>
+        </div>
+      </a>
+
+      <div class="harness-header-actions">
+        <button class="h-btn h-btn-secondary" id="clearAllStateBtn" title="Clear all local data and reset defaults">
+          <i class="fa-solid fa-trash-can"></i>
+          <span>Reset Storage</span>
+        </button>
+        <a href="index.html" class="h-btn h-btn-primary" target="_blank">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Launch Live Website</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="harness-nav" aria-label="Harness Navigation">
+    <div class="harness-nav-inner">
+      <button class="harness-tab-btn active" data-tab="tab-runner">
+        <i class="fa-solid fa-flask-vial"></i>
+        <span>Automated Test Runner</span>
+      </button>
+      <button class="harness-tab-btn" data-tab="tab-scenarios">
+        <i class="fa-solid fa-sliders"></i>
+        <span>State &amp; Scenario Injector</span>
+      </button>
+      <button class="harness-tab-btn" data-tab="tab-sandbox">
+        <i class="fa-solid fa-cubes"></i>
+        <span>Component Isolation Sandbox</span>
+      </button>
+      <button class="harness-tab-btn" data-tab="tab-chaos">
+        <i class="fa-solid fa-network-wired"></i>
+        <span>Chaos, Latency &amp; Viewports</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="harness-container">
+
+    <!-- Executive Metrics Ribbon -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <div>
+          <div class="metric-label">Total Test Assertions</div>
+          <div class="metric-value" id="metricTotalTests">0</div>
+        </div>
+        <div class="metric-icon icon-cyan">
+          <i class="fa-solid fa-vial"></i>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <div class="metric-label">Passed Tests</div>
+          <div class="metric-value" style="color:var(--h-success);" id="metricPassedTests">0</div>
+        </div>
+        <div class="metric-icon icon-emerald">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <div class="metric-label">Failed Tests</div>
+          <div class="metric-value" style="color:var(--h-danger);" id="metricFailedTests">0</div>
+        </div>
+        <div class="metric-icon icon-crimson">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <div class="metric-label">Pass Rate</div>
+          <div class="metric-value" id="metricPassRate">100%</div>
+        </div>
+        <div class="metric-icon icon-gold">
+          <i class="fa-solid fa-percent"></i>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <div class="metric-label">Active Cart Items</div>
+          <div class="metric-value" id="metricCartCount">0</div>
+        </div>
+        <div class="metric-icon icon-amber">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- TAB 1: AUTOMATED TEST RUNNER                             -->
+    <!-- ======================================================== -->
+    <div class="tab-pane active" id="tab-runner">
+      <div class="harness-toolbar">
+        <div class="toolbar-group">
+          <button class="h-btn h-btn-primary" id="runAllTestsBtn">
+            <i class="fa-solid fa-play"></i>
+            <span>Run All Tests</span>
+          </button>
+          <select class="h-select" id="filterStatusSelect">
+            <option value="all">Show All Tests</option>
+            <option value="fail">Show Failures Only</option>
+            <option value="pass">Show Passed Only</option>
+          </select>
+        </div>
+
+        <div class="toolbar-group">
+          <button class="h-btn h-btn-secondary" id="exportMarkdownReportBtn">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>Export Markdown Report</span>
+          </button>
+          <button class="h-btn h-btn-secondary" id="exportJsonReportBtn">
+            <i class="fa-solid fa-code"></i>
+            <span>Export JSON</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Execution Progress -->
+      <div class="runner-progress-bar">
+        <div class="runner-progress-fill" id="testRunnerProgressFill"></div>
+      </div>
+
+      <!-- Test Suites Container -->
+      <div id="testSuitesContainer" style="margin-top:1.5rem;">
+        <!-- Dynamically rendered by harness-ui.js -->
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 2: STATE & SCENARIO INJECTOR                         -->
+    <!-- ======================================================== -->
+    <div class="tab-pane" id="tab-scenarios">
+      <div class="harness-toolbar">
+        <div>
+          <strong style="font-size:1rem;">1-Click State Presets</strong>
+          <p style="font-size:0.8rem; color:var(--h-text-dim);">Instantly configure localStorage state to reproduce and test critical checkout flows.</p>
+        </div>
+      </div>
+
+      <div class="scenarios-grid">
+        <!-- Preset 1 -->
+        <div class="scenario-card">
+          <div>
+            <div class="scenario-title">
+              <i class="fa-solid fa-cart-shopping" style="color:var(--h-info);"></i>
+              <span>Empty Slate</span>
+            </div>
+            <div class="scenario-desc">Clears all items, coupons, and orders. Tests empty cart drawer and default landing state.</div>
+          </div>
+          <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('empty')">Apply State</button>
+        </div>
+
+        <!-- Preset 2 -->
+        <div class="scenario-card">
+          <div>
+            <div class="scenario-title">
+              <i class="fa-solid fa-fire" style="color:var(--h-primary);"></i>
+              <span>Single Sizzler Steak</span>
+            </div>
+            <div class="scenario-desc">Adds 1 Truffle Mushroom Chicken Steak ($18.99) with Truffle Sauce addon ($2.25). Subtotal: $21.24. Delivery fee applied.</div>
+          </div>
+          <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('single-steak')">Apply State</button>
+        </div>
+
+        <!-- Preset 3 -->
+        <div class="scenario-card">
+          <div>
+            <div class="scenario-title">
+              <i class="fa-solid fa-truck-fast" style="color:var(--h-warning);"></i>
+              <span>Near Free Shipping ($33.50)</span>
+            </div>
+            <div class="scenario-desc">Configures cart to $33.50 subtotal ($1.50 away from free delivery). Tests the free shipping meter and remaining amount notice.</div>
+          </div>
+          <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('near-threshold')">Apply State</button>
+        </div>
+
+        <!-- Preset 4 -->
+        <div class="scenario-card">
+          <div>
+            <div class="scenario-title">
+              <i class="fa-solid fa-crown" style="color:var(--h-gold);"></i>
+              <span>VIP Royal Feast ($100+)</span>
+            </div>
+            <div class="scenario-desc">Populates multiple premium steaks, handi platters, and mocktails. Unlocks free shipping ($0 delivery fee) and high order volume.</div>
+          </div>
+          <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('vip-feast')">Apply State</button>
+        </div>
+
+        <!-- Preset 5 -->
+        <div class="scenario-card">
+          <div>
+            <div class="scenario-title">
+              <i class="fa-solid fa-ticket" style="color:var(--h-success);"></i>
+              <span>Promo SHANGRILLA10</span>
+            </div>
+            <div class="scenario-desc">Applies 10% discount promo code with an eligible cart subtotal. Tests discount calculation and promo tag removal.</div>
+          </div>
+          <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('promo-percent')">Apply State</button>
+        </div>
+
+        <!-- Preset 6 -->
+        <div class="scenario-card">
+          <div>
+            <div class="scenario-title">
+              <i class="fa-solid fa-money-bill-transfer" style="color:#a855f7;"></i>
+              <span>Currency Toggle: PKR (Rs.)</span>
+            </div>
+            <div class="scenario-desc">Sets active store currency to PKR (Rs.) with 285x conversion rate and rounded integer formatting.</div>
+          </div>
+          <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('pkr')">Switch to PKR</button>
+        </div>
+
+        <!-- Preset 7 -->
+        <div class="scenario-card">
+          <div>
+            <div class="scenario-title">
+              <i class="fa-solid fa-shield-virus" style="color:var(--h-danger);"></i>
+              <span>Corrupt State Test</span>
+            </div>
+            <div class="scenario-desc">Injects malformed JSON into localStorage to verify CartManager defensive try/catch error handling.</div>
+          </div>
+          <button class="h-btn h-btn-danger" onclick="window.applyHarnessScenario('corrupt')">Inject Corrupt Data</button>
+        </div>
+      </div>
+
+      <!-- Live State Editor -->
+      <div class="state-inspector-grid">
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <span><i class="fa-solid fa-code"></i> Live LocalStorage Cart (JSON)</span>
+            <button class="h-btn h-btn-primary" style="padding:0.35rem 0.75rem; font-size:0.75rem;" id="saveCartJsonBtn">Save Changes</button>
+          </div>
+          <textarea id="liveCartJsonTextarea" spellcheck="false"></textarea>
+        </div>
+
+        <div class="code-panel">
+          <div class="code-panel-header">
+            <span><i class="fa-solid fa-clock-rotate-left"></i> Order History (JSON)</span>
+            <button class="h-btn h-btn-secondary" style="padding:0.35rem 0.75rem; font-size:0.75rem;" id="clearOrderHistoryBtn">Clear Orders</button>
+          </div>
+          <textarea id="liveOrderHistoryJsonTextarea" spellcheck="false" readonly></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 3: COMPONENT ISOLATION SANDBOX                       -->
+    <!-- ======================================================== -->
+    <div class="tab-pane" id="tab-sandbox">
+      <div class="sandbox-layout">
+        <!-- Sidebar Navigation -->
+        <div class="sandbox-nav">
+          <button class="sandbox-nav-btn active" data-sandbox="sandbox-menu-card">
+            <i class="fa-solid fa-utensils"></i> Menu Card
+          </button>
+          <button class="sandbox-nav-btn" data-sandbox="sandbox-customizer">
+            <i class="fa-solid fa-sliders"></i> Item Customizer
+          </button>
+          <button class="sandbox-nav-btn" data-sandbox="sandbox-receipt">
+            <i class="fa-solid fa-receipt"></i> Printable Receipt
+          </button>
+          <button class="sandbox-nav-btn" data-sandbox="sandbox-timeline">
+            <i class="fa-solid fa-timeline"></i> Order Status Tracker
+          </button>
+          <button class="sandbox-nav-btn" data-sandbox="sandbox-toasts">
+            <i class="fa-solid fa-bell"></i> Toast Notifications
+          </button>
+        </div>
+
+        <!-- Sandbox Stage -->
+        <div class="sandbox-stage">
+          <div class="stage-header">
+            <div class="stage-title" id="sandboxStageTitle">Menu Card Component</div>
+            <div id="sandboxStageControls"></div>
+          </div>
+
+          <div class="stage-preview" id="sandboxStagePreview">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 4: CHAOS, LATENCY & VIEWPORT SIMULATOR              -->
+    <!-- ======================================================== -->
+    <div class="tab-pane" id="tab-chaos">
+      <div class="harness-toolbar">
+        <div class="toolbar-group">
+          <span style="font-size:0.85rem; font-weight:600; color:var(--h-text-dim);">Device Viewport:</span>
+          <button class="h-btn h-btn-secondary" onclick="window.setViewportWidth(375)">
+            <i class="fa-solid fa-mobile-screen"></i> Mobile (375px)
+          </button>
+          <button class="h-btn h-btn-secondary" onclick="window.setViewportWidth(768)">
+            <i class="fa-solid fa-tablet-screen-button"></i> Tablet (768px)
+          </button>
+          <button class="h-btn h-btn-secondary" onclick="window.setViewportWidth(1200)">
+            <i class="fa-solid fa-desktop"></i> Desktop (1200px)
+          </button>
+        </div>
+
+        <div class="toolbar-group">
+          <span style="font-size:0.85rem; font-weight:600; color:var(--h-text-dim);">Simulated Latency:</span>
+          <select class="h-select" id="chaosLatencySelect" onchange="window.setSimulatedLatency(this.value)">
+            <option value="0">0ms (Instant)</option>
+            <option value="400">400ms (Fast 4G)</option>
+            <option value="1200">1200ms (Slow 3G)</option>
+            <option value="3000">3000ms (High Latency)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="viewport-frame-wrapper" id="viewportFrameWrapper" style="width: 100%; max-width: 1200px;">
+        <iframe src="index.html" class="viewport-frame" id="previewIframe" title="Shangrilla Gardens Live Preview"></iframe>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Harness Toast Container -->
+  <div class="h-toast-container" id="harnessToastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/harness-engine.js"></script>
+  <script src="js/harness-suites.js"></script>
+  <script src="js/harness-ui.js"></script>
+</body>
+</html>
