@@ -1,7 +1,7 @@
 /**
  * Shangrilla Gardens & BBQ - Test Suites Specification
  * Comprehensive BDD automated test batteries covering data schema, cart logic,
- * coupons, tax & shipping math, currency, persistence, accessibility, and asset availability.
+ * coupons, tax & shipping math, PKR price formatting, persistence, accessibility, and asset availability.
  */
 
 (function () {
@@ -24,8 +24,8 @@
     });
 
     it('Pricing constants are valid positive values', () => {
-      expect(RESTAURANT_DATA.deliveryFee).toBeCloseTo(2.50, 0.001);
-      expect(RESTAURANT_DATA.freeDeliveryThreshold).toBeCloseTo(35.00, 0.001);
+      expect(RESTAURANT_DATA.deliveryFee).toBe(713);
+      expect(RESTAURANT_DATA.freeDeliveryThreshold).toBe(9975);
       expect(RESTAURANT_DATA.taxRate).toBeCloseTo(0.05, 0.001);
     });
 
@@ -93,22 +93,22 @@
       expect(added).toBe(true);
       expect(testCart.cart.length).toBe(1);
       expect(testCart.cart[0].productId).toBe('truffle-mushroom-steak');
-      expect(testCart.cart[0].unitPrice).toBeCloseTo(18.99, 0.01);
+      expect(testCart.cart[0].unitPrice).toBe(1500);
       expect(testCart.cart[0].quantity).toBe(1);
     });
 
-    it('Calculates portion price delta correctly (Double Fillet +$6.50)', () => {
+    it('Calculates portion price delta correctly (Double Fillet +Rs. 600)', () => {
       testCart.addItem('truffle-mushroom-steak', 1, [], 'Normal', '', 1);
-      const expectedPrice = 18.99 + 6.50; // $25.49
-      expect(testCart.cart[0].unitPrice).toBeCloseTo(expectedPrice, 0.01);
+      const expectedPrice = 1500 + 600; // Rs. 2,100
+      expect(testCart.cart[0].unitPrice).toBe(expectedPrice);
     });
 
     it('Calculates add-on prices and accumulates them in item unit price', () => {
-      // Add extra sauce ($2.25) and potato wedges ($1.99)
-      const addons = ['Extra Creamy Truffle Mushroom Sauce', 'Crispy Herb Potato Wedges'];
+      // Add extra sauce (Rs. 220) and sauteed mushrooms (Rs. 250)
+      const addons = ['Extra Creamy Truffle Mushroom Sauce', 'Garlic Butter Sautéed Mushrooms'];
       testCart.addItem('truffle-mushroom-steak', 0, addons, 'Normal', '', 1);
-      const expectedUnitPrice = 18.99 + 2.25 + 1.99; // $23.23
-      expect(testCart.cart[0].unitPrice).toBeCloseTo(expectedUnitPrice, 0.01);
+      const expectedUnitPrice = 1500 + 220 + 250; // Rs. 1,970
+      expect(testCart.cart[0].unitPrice).toBe(expectedUnitPrice);
       expect(testCart.cart[0].addons.length).toBe(2);
     });
 
@@ -182,7 +182,7 @@
     });
 
     it('Rejects promo code when order subtotal is below minOrder requirement', () => {
-      // Add individual naan ($3.50) while SHANGRILLA10 requires minOrder $15
+      // Add individual naan (Rs. 100) while SHANGRILLA10 requires minOrder Rs. 4,275
       testCart.addItem('individual-roghani-naan', 0, [], 'Normal', '', 1);
       const res = testCart.applyCoupon('SHANGRILLA10');
       expect(res.success).toBe(false);
@@ -190,27 +190,27 @@
     });
 
     it('Applies SHANGRILLA10 (10% off) when subtotal requirement is met', () => {
-      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 1); // $18.99 >= 15
+      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 3); // Rs. 4,500 >= 4,275
       const res = testCart.applyCoupon('SHANGRILLA10');
       expect(res.success).toBe(true);
       expect(testCart.appliedCoupon.code).toBe('SHANGRILLA10');
 
       const totals = testCart.calculateTotals('delivery');
-      const expectedDiscount = (18.99 * 10) / 100;
-      expect(totals.discount).toBeCloseTo(expectedDiscount, 0.01);
+      const expectedDiscount = (4500 * 10) / 100;
+      expect(totals.discount).toBe(expectedDiscount);
     });
 
-    it('Applies ROYALSTEAK ($5.00 fixed discount) correctly', () => {
-      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 2); // $37.98 >= 25
+    it('Applies ROYALSTEAK (Rs. 1,425 fixed discount) correctly', () => {
+      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 5); // Rs. 7,500 >= 7,125
       const res = testCart.applyCoupon('ROYALSTEAK');
       expect(res.success).toBe(true);
 
       const totals = testCart.calculateTotals('delivery');
-      expect(totals.discount).toBeCloseTo(5.00, 0.01);
+      expect(totals.discount).toBe(1425);
     });
 
     it('Applies FREESHIP coupon to waive delivery fee on eligible orders', () => {
-      testCart.addItem('handi-chicken-hari-mirch', 0, [], 'Normal', '', 2); // $33.00 (under $35 threshold, but >= 20)
+      testCart.addItem('handi-chicken-hari-mirch', 0, [], 'Normal', '', 3); // Rs. 6,105 (under Rs. 9,975 threshold, but >= 5,700)
       const res = testCart.applyCoupon('FREESHIP');
       expect(res.success).toBe(true);
 
@@ -219,7 +219,7 @@
     });
 
     it('removeCoupon clears active coupon and restores normal totals', () => {
-      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 1);
+      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 3); // Rs. 4,500 >= 4,275
       testCart.applyCoupon('SHANGRILLA10');
       expect(testCart.appliedCoupon).not.toBeNull();
 
@@ -242,60 +242,56 @@
       testCart.cart = [];
     });
 
-    it('Applies standard $2.50 delivery fee when subtotal is below $35.00', () => {
-      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 1); // $18.99
+    it('Applies standard Rs. 713 delivery fee when subtotal is below Rs. 9,975', () => {
+      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 1); // Rs. 1,500
       const totals = testCart.calculateTotals('delivery');
-      expect(totals.subtotal).toBeCloseTo(18.99, 0.01);
-      expect(totals.deliveryFee).toBeCloseTo(2.50, 0.01);
-      expect(totals.freeDeliveryRemaining).toBeCloseTo(16.01, 0.01);
+      expect(totals.subtotal).toBe(1500);
+      expect(totals.deliveryFee).toBe(713);
+      expect(totals.freeDeliveryRemaining).toBe(8475);
     });
 
-    it('Unlocks free delivery when subtotal meets or exceeds $35.00', () => {
-      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 2); // $37.98
+    it('Unlocks free delivery when subtotal meets or exceeds Rs. 9,975', () => {
+      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 7); // Rs. 10,500
       const totals = testCart.calculateTotals('delivery');
-      expect(totals.subtotal).toBeCloseTo(37.98, 0.01);
+      expect(totals.subtotal).toBe(10500);
       expect(totals.deliveryFee).toBe(0);
       expect(totals.freeDeliveryRemaining).toBe(0);
     });
 
     it('Waives delivery fee for pickup orders regardless of subtotal', () => {
-      testCart.addItem('individual-roghani-naan', 0, [], 'Normal', '', 1); // $3.50
+      testCart.addItem('individual-roghani-naan', 0, [], 'Normal', '', 1); // Rs. 100
       const totals = testCart.calculateTotals('pickup');
       expect(totals.deliveryFee).toBe(0);
     });
 
     it('Computes tax at exactly 5% on taxable amount after discount', () => {
-      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 2); // $37.98
-      testCart.appliedCoupon = { code: 'TEST', type: 'fixed', value: 7.98, minOrder: 10 };
+      testCart.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 7); // Rs. 10,500
+      testCart.appliedCoupon = { code: 'TEST', type: 'fixed', value: 500, minOrder: 1000 };
       const totals = testCart.calculateTotals('delivery');
-      const taxable = 37.98 - 7.98; // $30.00
-      const expectedTax = 30.00 * 0.05; // $1.50
-      expect(totals.tax).toBeCloseTo(expectedTax, 0.01);
-      expect(totals.grandTotal).toBeCloseTo(30.00 + 0 + expectedTax, 0.01);
+      const taxable = 10500 - 500; // Rs. 10,000
+      const expectedTax = taxable * 0.05; // Rs. 500
+      expect(totals.tax).toBe(expectedTax);
+      expect(totals.grandTotal).toBe(taxable + 0 + expectedTax);
     });
   });
 
   // ------------------------------------------------------------------
-  // Suite 5: Currency Converter
+  // Suite 5: PKR Price Formatter
   // ------------------------------------------------------------------
-  describe('Suite 5: Multi-Currency Formatter', () => {
+  describe('Suite 5: PKR Price Formatter', () => {
     let testCart;
 
     beforeEach(() => {
       testCart = new CartManager();
-      testCart.currencyKey = 'shangrilla_test_curr';
     });
 
-    it('Formats USD currency with standard dollar sign and 2 decimals', () => {
-      testCart.setCurrency('USD');
-      expect(testCart.formatPrice(18.99)).toBe('$18.99');
-      expect(testCart.formatPrice(0)).toBe('$0.00');
+    it('Formats prices with Rs. prefix and thousands separators', () => {
+      expect(testCart.formatPrice(5412)).toBe('Rs. 5,412');
+      expect(testCart.formatPrice(0)).toBe('Rs. 0');
     });
 
-    it('Formats PKR currency with Rs. prefix and 285x conversion rate', () => {
-      testCart.setCurrency('PKR');
-      const pkrString = testCart.formatPrice(18.99); // 18.99 * 285 = 5412.15 -> 5,412
-      expect(pkrString).toBe('Rs. 5,412');
+    it('Rounds fractional rupee amounts (e.g. tax) to whole rupees', () => {
+      expect(testCart.formatPrice(270.6)).toBe('Rs. 271');
     });
   });
 
@@ -327,7 +323,7 @@
       const mockOrder = {
         orderId: 'SG-TEST-999',
         customer: { name: 'John Doe', phone: '03001234567' },
-        grandTotal: '$42.50',
+        grandTotal: 'Rs. 12,113',
         timestamp: new Date().toISOString()
       };
 

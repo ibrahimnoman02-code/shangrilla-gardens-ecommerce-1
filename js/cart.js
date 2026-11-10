@@ -1,20 +1,44 @@
 // Cart State & Calculations for Shangrilla Gardens & BBQ
+// All amounts are whole Pakistani Rupees (PKR).
+const PKR_FORMATTER = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+
 class CartManager {
   constructor() {
-    this.storageKey = 'shangrilla_cart_v1';
-    this.couponKey = 'shangrilla_coupon_v1';
-    this.currencyKey = 'shangrilla_currency_v2';
-    this.orderHistoryKey = 'shangrilla_orders_v1';
+    this.storageKey = 'shangrilla_cart_v2';
+    this.couponKey = 'shangrilla_coupon_v2';
+    this.orderHistoryKey = 'shangrilla_orders_v2';
 
+    this.migrateLegacyStorage();
     this.cart = this.loadCart();
     this.appliedCoupon = this.loadCoupon();
-    this.activeCurrency = localStorage.getItem(this.currencyKey) || 'PKR';
+  }
+
+  // Carts saved before the PKR-only switch stored USD amounts (x285 = PKR).
+  migrateLegacyStorage() {
+    try {
+      const legacyCart = localStorage.getItem('shangrilla_cart_v1');
+      if (legacyCart && !localStorage.getItem(this.storageKey)) {
+        const toPkr = (v) => Math.round((parseFloat(v) || 0) * 285);
+        const migrated = JSON.parse(legacyCart).map(item => ({
+          ...item,
+          unitPrice: toPkr(item.unitPrice),
+          portionPriceDelta: toPkr(item.portionPriceDelta),
+          addons: (item.addons || []).map(a => ({ ...a, price: toPkr(a.price) }))
+        }));
+        localStorage.setItem(this.storageKey, JSON.stringify(migrated));
+      }
+    } catch (e) {
+      // Corrupt legacy data is simply dropped
+    }
+    ['shangrilla_cart_v1', 'shangrilla_coupon_v1', 'shangrilla_currency_v2', 'shangrilla_orders_v1']
+      .forEach(key => localStorage.removeItem(key));
   }
 
   loadCart() {
     try {
       const data = localStorage.getItem(this.storageKey);
-      return data ? JSON.parse(data) : [];
+      const parsed = data ? JSON.parse(data) : [];
+      return Array.isArray(parsed) ? parsed : [];
     } catch (e) {
       console.error('Error loading cart', e);
       return [];
@@ -45,23 +69,9 @@ class CartManager {
     this.notify();
   }
 
-  setCurrency(code) {
-    this.activeCurrency = code;
-    localStorage.setItem(this.currencyKey, code);
-    this.notify();
-  }
-
-  getCurrency() {
-    return this.activeCurrency;
-  }
-
-  formatPrice(usdAmount) {
-    const num = parseFloat(usdAmount) || 0;
-    if (this.activeCurrency === 'PKR') {
-      const pkrVal = Math.round(num * RESTAURANT_DATA.currency.altRate);
-      return `Rs. ${pkrVal.toLocaleString()}`;
-    }
-    return `$${num.toFixed(2)}`;
+  formatPrice(amount) {
+    const num = Math.round(parseFloat(amount) || 0);
+    return `Rs. ${PKR_FORMATTER.format(num)}`;
   }
 
   addItem(productId, portionIndex = 0, selectedAddons = [], spiceLevel = "Normal", instructions = "", quantity = 1) {
@@ -75,7 +85,7 @@ class CartManager {
     let addonsTotal = 0;
     const resolvedAddons = [];
     selectedAddons.forEach(addonName => {
-      const match = product.addons.find(a => a.name === addonName);
+      const match = (product.addons || []).find(a => a.name === addonName);
       if (match) {
         resolvedAddons.push(match);
         addonsTotal += match.price;
@@ -93,7 +103,7 @@ class CartManager {
       this.cart[existingIndex].quantity += quantity;
     } else {
       this.cart.push({
-        id: 'ci_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+        id: 'ci_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7),
         variationKey,
         productId: product.id,
         title: product.title,
@@ -227,8 +237,7 @@ class CartManager {
       detail: {
         cart: this.cart,
         count: this.getTotalCount(),
-        totals: this.calculateTotals(),
-        currency: this.activeCurrency
+        totals: this.calculateTotals()
       }
     }));
   }

@@ -77,7 +77,7 @@
       "title": "S1 (Chicken Deal For 5)",
       "subtitle": "A Hearty Family-Style Chicken Feast",
       "category": "deals",
-      "price": 23.3333,
+      "price": 6650,
       "rating": 4.95,
       "reviewsCount": 89,
       "badge": "Family Feast",
@@ -104,15 +104,15 @@
       "addons": [
         {
           "name": "Extra Assorted Bread Basket",
-          "price": 1.75
+          "price": 499
         },
         {
           "name": "Extra 1 Litre Cold Drink",
-          "price": 0.7719
+          "price": 220
         },
         {
           "name": "Upgrade to Dessert Platter",
-          "price": 2.7368
+          "price": 780
         }
       ]
     },
@@ -121,8 +121,8 @@
       "title": "S2 (Mutton Deal for 5)",
       "subtitle": "A Rich Royal Desi Spread",
       "category": "deals",
-      "price": 29.8246,
-      "rating": 5.0,
+      "price": 8500,
+      "rating": 5,
       "reviewsCount": 112,
       "badge": "Royal Special",
       "featured": true,
@@ -148,11 +148,11 @@
       "addons": [
         {
           "name": "Extra Roghni Naans (2 Pcs)",
-          "price": 0.7
+          "price": 200
         },
         {
           "name": "Extra Mutton Seekh Royale (4 Pcs)",
-          "price": 7.5439
+          "price": 2150
         }
       ]
     },
@@ -161,7 +161,7 @@
       "title": "S3 (BBQ Feast Deal)",
       "subtitle": "The Complete Charcoal Grill Experience",
       "category": "deals",
-      "price": 17.5439,
+      "price": 5000,
       "rating": 4.9,
       "reviewsCount": 78,
       "badge": "BBQ Masterpiece",
@@ -187,11 +187,11 @@
       "addons": [
         {
           "name": "Extra Garlic Naan",
-          "price": 0.42
+          "price": 120
         },
         {
           "name": "Mint Lemonade Pair",
-          "price": 1.93
+          "price": 550
         }
       ]
     },
@@ -200,7 +200,7 @@
       "title": "S4 (Pizza Meal Deal)",
       "subtitle": "Modern Comfort Combo",
       "category": "deals",
-      "price": 10.1754,
+      "price": 2900,
       "rating": 4.85,
       "reviewsCount": 64,
       "badge": "Pizza Combo",
@@ -226,11 +226,11 @@
       "addons": [
         {
           "name": "Extra Cheese Melt Crown",
-          "price": 0.8772
+          "price": 250
         },
         {
           "name": "Dip Sauces Trio",
-          "price": 0.5263
+          "price": 150
         }
       ]
     },
@@ -239,7 +239,7 @@
       "title": "Two - Person Curated Deal",
       "subtitle": "A Complete Intimate Dining Experience",
       "category": "deals",
-      "price": 10.8772,
+      "price": 3100,
       "rating": 4.9,
       "reviewsCount": 95,
       "badge": "Duo Special",
@@ -264,7 +264,7 @@
       "addons": [
         {
           "name": "Extra Roghni Naan",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -273,7 +273,7 @@
       "title": "Chef's Bread Basket",
       "subtitle": "Tandoor Artisan Bread Assortment",
       "category": "naans",
-      "price": 1.75,
+      "price": 499,
       "rating": 4.9,
       "reviewsCount": 140,
       "badge": "Tandoor Bake",
@@ -299,11 +299,11 @@
       "addons": [
         {
           "name": "Extra Desi Makhan Butter Glaze",
-          "price": 0.28
+          "price": 80
         },
         {
           "name": "Mint Raita Bowl",
-          "price": 0.5965
+          "price": 170
         }
       ]
     },
@@ -312,7 +312,7 @@
       "title": "Royal Dessert Platter",
       "subtitle": "Indulgent Sweet Finale from Our Bakery",
       "category": "desserts",
-      "price": 2.7368,
+      "price": 780,
       "rating": 4.95,
       "reviewsCount": 105,
       "badge": "Chef Sweet Choice",
@@ -338,7 +338,7 @@
       "addons": [
         {
           "name": "Single Scoop Vanilla Ice Cream",
-          "price": 0.63
+          "price": 180
         }
       ]
     },
@@ -347,7 +347,7 @@
       "title": "Classic Hot & Sour Soup",
       "subtitle": "Served hot, for the cold evenings",
       "category": "soups",
-      "price": 5.79,
+      "price": 1650,
       "rating": 4.9,
       "reviewsCount": 118,
       "badge": "Winter Star",
@@ -356,7 +356,7 @@
       "gallery": [
         "assets/images/hot-and-sour-soup.jpg"
       ],
-      "description": "From the Kitchen of Shangrilla Garden. Served piping hot for the cold evenings\u2014our signature Classic Hot & Sour Soup is a harmonious blend of spicy warmth and tangy zest. Prepared with slow-simmered chicken broth, tender shredded chicken, whisked egg drop ribbons, fresh black wood ear mushrooms, tofu strips, and finely diced crisp garden vegetables. Seasoned to perfection with aged black vinegar, crushed white pepper, and toasted sesame oil.",
+      "description": "From the Kitchen of Shangrilla Garden. Served piping hot for the cold evenings—our signature Classic Hot & Sour Soup is a harmonious blend of spicy warmth and tangy zest. Prepared with slow-simmered chicken broth, tender shredded chicken, whisked egg drop ribbons, fresh black wood ear mushrooms, tofu strips, and finely diced crisp garden vegetables. Seasoned to perfection with aged black vinegar, crushed white pepper, and toasted sesame oil.",
       "dietary": [
         "Chef Recommended",
         "Served Piping Hot",
@@ -371,25 +371,25 @@
         },
         {
           "name": "Half Bowl (Single Serving)",
-          "priceDelta": -2.8075
+          "priceDelta": -800
         }
       ],
       "addons": [
         {
           "name": "Crispy Fried Wonton Crackers",
-          "price": 0.5263
+          "price": 150
         },
         {
           "name": "Extra Shredded Chicken & Egg Drop",
-          "price": 0.8772
+          "price": 250
         },
         {
           "name": "Spicy Szechuan Chili Oil Pot",
-          "price": 0.42
+          "price": 120
         },
         {
           "name": "Extra Chili Vinegar & Dark Soy Dips",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -398,7 +398,7 @@
       "title": "Golden Corn Soup",
       "subtitle": "Sweet golden kernels in velvet chicken broth",
       "category": "soups",
-      "price": 5.37,
+      "price": 1530,
       "rating": 4.85,
       "reviewsCount": 68,
       "badge": "Comfort Classic",
@@ -421,13 +421,13 @@
         },
         {
           "name": "Half Bowl (Single Serving)",
-          "priceDelta": -2.4928
+          "priceDelta": -710
         }
       ],
       "addons": [
         {
           "name": "Crispy Crackers & Sauces",
-          "price": 0.5263
+          "price": 150
         }
       ]
     },
@@ -436,7 +436,7 @@
       "title": "Thai Lemongrass Soup",
       "subtitle": "Zesty, fragrant & herbal Siamese broth",
       "category": "soups",
-      "price": 5.4035,
+      "price": 1540,
       "rating": 4.9,
       "reviewsCount": 54,
       "badge": "Herbal Specialty",
@@ -460,13 +460,13 @@
         },
         {
           "name": "Half Bowl (Single Serving)",
-          "priceDelta": -2.7035
+          "priceDelta": -770
         }
       ],
       "addons": [
         {
           "name": "Extra Lime & Chili Condiments",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -475,7 +475,7 @@
       "title": "Crispy French Fries / House Fries",
       "subtitle": "Golden, salted and crunchy",
       "category": "soups",
-      "price": 1.8246,
+      "price": 520,
       "rating": 4.8,
       "reviewsCount": 85,
       "badge": "Popular Snack",
@@ -500,7 +500,7 @@
       "addons": [
         {
           "name": "Melted Cheddar Cheese Drizzle",
-          "price": 0.63
+          "price": 180
         }
       ]
     },
@@ -509,7 +509,7 @@
       "title": "Grilled Chicken Sandwich Melts",
       "subtitle": "Toasted pan-bread with melted cheese",
       "category": "soups",
-      "price": 2.9825,
+      "price": 850,
       "rating": 4.85,
       "reviewsCount": 62,
       "badge": "Cafe Special",
@@ -534,7 +534,7 @@
       "addons": [
         {
           "name": "Extra Cheese Layer",
-          "price": 0.42
+          "price": 120
         }
       ]
     },
@@ -543,7 +543,7 @@
       "title": "Classic Chicken Club Sandwich",
       "subtitle": "Triple-decker stacked with egg, chicken & salad",
       "category": "soups",
-      "price": 3.3333,
+      "price": 950,
       "rating": 4.9,
       "reviewsCount": 88,
       "badge": "All-Time Classic",
@@ -568,7 +568,7 @@
       "addons": [
         {
           "name": "Extra French Fries Portion",
-          "price": 0.7
+          "price": 200
         }
       ]
     },
@@ -577,7 +577,7 @@
       "title": "Crispy Zinger Burger",
       "subtitle": "Ultra-crunchy fried chicken fillet in sesame brioche",
       "category": "soups",
-      "price": 2.4561,
+      "price": 700,
       "rating": 4.88,
       "reviewsCount": 110,
       "badge": "Crispy Crunch",
@@ -602,7 +602,7 @@
       "addons": [
         {
           "name": "Cheese Slice",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -611,7 +611,7 @@
       "title": "Tropical Fruit Salad",
       "subtitle": "Fresh seasonal orchard fruits in light honey cream",
       "category": "soups",
-      "price": 2.7,
+      "price": 770,
       "rating": 4.8,
       "reviewsCount": 42,
       "badge": "Fresh Healthy",
@@ -634,7 +634,7 @@
         },
         {
           "name": "Grand Fruit Plate",
-          "priceDelta": 1.1599999999999997
+          "priceDelta": 331
         }
       ],
       "addons": []
@@ -644,7 +644,7 @@
       "title": "Fresh Green Salad",
       "subtitle": "Crisp farm cucumbers, tomatoes, radishes & onions",
       "category": "soups",
-      "price": 0.5965,
+      "price": 170,
       "rating": 4.75,
       "reviewsCount": 60,
       "badge": "Garden Fresh",
@@ -674,7 +674,7 @@
       "title": "Traditional Mint & Zeera Raita",
       "subtitle": "Whipped yogurt with roasted cumin and crushed mint",
       "category": "soups",
-      "price": 0.5965,
+      "price": 170,
       "rating": 4.85,
       "reviewsCount": 90,
       "badge": "Desi Pairing",
@@ -696,8 +696,8 @@
           "priceDelta": 0
         },
         {
-          "name": "Creamy Nestl\u00e9 Premium Yogurt Raita",
-          "priceDelta": 0.1754
+          "name": "Creamy Nestlé Premium Yogurt Raita",
+          "priceDelta": 50
         }
       ],
       "addons": []
@@ -707,7 +707,7 @@
       "title": "Crispy Chicken Wings (8 Pcs)",
       "subtitle": "Crunchy golden fried wings with dipping sauce",
       "category": "soups",
-      "price": 2.807,
+      "price": 800,
       "rating": 4.9,
       "reviewsCount": 72,
       "badge": "Finger Food",
@@ -732,7 +732,7 @@
       "addons": [
         {
           "name": "Honey Chili Glaze Upgrade",
-          "price": 0.5263
+          "price": 150
         }
       ]
     },
@@ -741,7 +741,7 @@
       "title": "19. Chef's Special Chicken Tikka (Breast Fillet)",
       "subtitle": "Tender chicken breast in tikka spices, flame-grilled",
       "category": "bbq",
-      "price": 1.7544,
+      "price": 500,
       "rating": 4.9,
       "reviewsCount": 130,
       "badge": "Charcoal Favorite",
@@ -767,7 +767,7 @@
       "addons": [
         {
           "name": "Hot Roghni Naan",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -776,7 +776,7 @@
       "title": "20. Smoked Chicken Leg Tikka",
       "subtitle": "Juicy leg piece infused with herbs and slow-grilled",
       "category": "bbq",
-      "price": 1.7544,
+      "price": 500,
       "rating": 4.9,
       "reviewsCount": 125,
       "badge": "Smoky Classic",
@@ -801,7 +801,7 @@
       "addons": [
         {
           "name": "Garlic Naan",
-          "price": 0.42
+          "price": 120
         }
       ]
     },
@@ -810,7 +810,7 @@
       "title": "21. Royal Chicken Boti Skewers (12 Pcs)",
       "subtitle": "Charred on bone with aromatic spices",
       "category": "bbq",
-      "price": 5.614,
+      "price": 1600,
       "rating": 4.9,
       "reviewsCount": 140,
       "badge": "House Star",
@@ -835,7 +835,7 @@
       "addons": [
         {
           "name": "Mint Raita",
-          "price": 0.5965
+          "price": 170
         }
       ]
     },
@@ -844,7 +844,7 @@
       "title": "22. Signature Chicken Seekh Kebab (4 Pcs)",
       "subtitle": "Minced chicken with herbs & charcoal flame-grilled",
       "category": "bbq",
-      "price": 4.21,
+      "price": 1200,
       "rating": 4.88,
       "reviewsCount": 98,
       "badge": "Seekh Favorite",
@@ -869,7 +869,7 @@
       "addons": [
         {
           "name": "Tandoori Paratha",
-          "price": 0.42
+          "price": 120
         }
       ]
     },
@@ -878,7 +878,7 @@
       "title": "24. Kasturi Murg Boti (10 Pcs)",
       "subtitle": "Infused with fragrant fenugreek & rich cream",
       "category": "bbq",
-      "price": 7.0175,
+      "price": 2000,
       "rating": 4.95,
       "reviewsCount": 85,
       "badge": "Mughlai Deluxe",
@@ -907,7 +907,7 @@
       "title": "26. Murg Malai Delight (12 Pcs)",
       "subtitle": "Cream, cheese & subtle spices with melt-in-mouth texture",
       "category": "bbq",
-      "price": 6.3158,
+      "price": 1800,
       "rating": 4.95,
       "reviewsCount": 160,
       "badge": "Bestseller",
@@ -933,7 +933,7 @@
       "addons": [
         {
           "name": "Extra Garlic Butter Glaze",
-          "price": 0.3158
+          "price": 90
         }
       ]
     },
@@ -942,7 +942,7 @@
       "title": "27. Velvet Makhmali Kabab (12 Pcs)",
       "subtitle": "Buttery soft kababs glazed with cream and delicate spices",
       "category": "bbq",
-      "price": 7.79,
+      "price": 2220,
       "rating": 4.95,
       "reviewsCount": 75,
       "badge": "Royal Heritage",
@@ -971,7 +971,7 @@
       "title": "28. Kalmi Drumettes Mughlai Style (4 Pcs)",
       "subtitle": "Juicy chicken drumettes in yogurt-nut paste",
       "category": "bbq",
-      "price": 4.6667,
+      "price": 1330,
       "rating": 4.88,
       "reviewsCount": 65,
       "badge": "Mughlai Roast",
@@ -1000,7 +1000,7 @@
       "title": "29. Heritage Mutton Tikka (16 Pcs)",
       "subtitle": "Prime mutton cubes charred over open flame with masala",
       "category": "bbq",
-      "price": 10.5263,
+      "price": 3000,
       "rating": 4.98,
       "reviewsCount": 115,
       "badge": "Mutton Luxury",
@@ -1025,7 +1025,7 @@
       "addons": [
         {
           "name": "Traditional Roghni Naan",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -1034,7 +1034,7 @@
       "title": "30. Mutton Seekh Royale (4 Pcs)",
       "subtitle": "Hand-minced mutton with coriander, mint & flame-grilled",
       "category": "bbq",
-      "price": 7.5439,
+      "price": 2150,
       "rating": 4.95,
       "reviewsCount": 94,
       "badge": "Chef Choice",
@@ -1063,7 +1063,7 @@
       "title": "31. Smoky Beef Seekh (4 Pcs)",
       "subtitle": "Succulent minced beef slow-roasted for smoky aroma",
       "category": "bbq",
-      "price": 3.51,
+      "price": 1000,
       "rating": 4.85,
       "reviewsCount": 82,
       "badge": "Smoky Beef",
@@ -1092,7 +1092,7 @@
       "title": "33. Peshawari Chappal Kabab (2 Pcs)",
       "subtitle": "Pashtun classic with coarse-ground beef & green chili",
       "category": "bbq",
-      "price": 3.86,
+      "price": 1100,
       "rating": 4.9,
       "reviewsCount": 96,
       "badge": "Peshawari Classic",
@@ -1121,8 +1121,8 @@
       "title": "34. Charred Mutton Chops (4 Pcs)",
       "subtitle": "French-cut mutton ribs marinated in herbs, flame-kissed",
       "category": "bbq",
-      "price": 8.9825,
-      "rating": 5.0,
+      "price": 2560,
+      "rating": 5,
       "reviewsCount": 88,
       "badge": "Signature Ribs",
       "featured": true,
@@ -1150,7 +1150,7 @@
       "title": "35. Behari Murg Boti (12 Pcs)",
       "subtitle": "Boneless chicken in smoky mustard-based Behari masala",
       "category": "bbq",
-      "price": 6.8421,
+      "price": 1950,
       "rating": 4.9,
       "reviewsCount": 70,
       "badge": "Behari Special",
@@ -1179,7 +1179,7 @@
       "title": "36. White Chicken Supreme (Breast)",
       "subtitle": "Creamy yogurt-based tikka, mild and elegant",
       "category": "bbq",
-      "price": 2.1053,
+      "price": 600,
       "rating": 4.88,
       "reviewsCount": 65,
       "badge": "Mild Elegant",
@@ -1208,7 +1208,7 @@
       "title": "37. Creamy White Chicken Leg Tikka",
       "subtitle": "Subtly spiced white marinade, charcoal-grilled to tenderness",
       "category": "bbq",
-      "price": 2.1053,
+      "price": 600,
       "rating": 4.88,
       "reviewsCount": 68,
       "badge": "Mild & Juicy",
@@ -1237,7 +1237,7 @@
       "title": "38. Lebanese Grilled Kabab (Cheese Stuffed)",
       "subtitle": "Infused with garlic, lemon & olive oil, stuffed with melted cheese",
       "category": "bbq",
-      "price": 8.7719,
+      "price": 2500,
       "rating": 4.95,
       "reviewsCount": 110,
       "badge": "Cheese Stuffed",
@@ -1260,7 +1260,7 @@
         },
         {
           "name": "3 Pieces Portion",
-          "priceDelta": -3.1579000000000006
+          "priceDelta": -900
         }
       ],
       "addons": []
@@ -1270,7 +1270,7 @@
       "title": "40. Sheesh Taouk Skewers (12 Pcs)",
       "subtitle": "Chicken cubes in yogurt, paprika & lemon zest",
       "category": "bbq",
-      "price": 6.6667,
+      "price": 1900,
       "rating": 4.9,
       "reviewsCount": 78,
       "badge": "Mediterranean",
@@ -1299,7 +1299,7 @@
       "title": "41. Haryali Murg Tikka (12 Pcs)",
       "subtitle": "Chicken in coriander-mint paste, grilled over embers",
       "category": "bbq",
-      "price": 7.0175,
+      "price": 2000,
       "rating": 4.9,
       "reviewsCount": 84,
       "badge": "Herb Garden",
@@ -1328,7 +1328,7 @@
       "title": "Silken Reshmi Kabab (4 Pcs)",
       "subtitle": "Boneless chicken in cream, cheese & subtle spices",
       "category": "bbq",
-      "price": 6.3158,
+      "price": 1800,
       "rating": 4.92,
       "reviewsCount": 92,
       "badge": "Silken Texture",
@@ -1357,7 +1357,7 @@
       "title": "Royal Chicken Malai Boti & Seekh Kebab",
       "subtitle": "Melt-in-mouth charcoal grilled perfection",
       "category": "bbq",
-      "price": 6.8421,
+      "price": 1950,
       "rating": 4.95,
       "reviewsCount": 167,
       "badge": "BBQ Masterpiece",
@@ -1381,13 +1381,13 @@
         },
         {
           "name": "Jumbo BBQ Platter (16 Boti + 4 Seekh)",
-          "priceDelta": 5.614
+          "priceDelta": 1600
         }
       ],
       "addons": [
         {
           "name": "Garlic Butter Naan",
-          "price": 0.42
+          "price": 120
         }
       ]
     },
@@ -1396,7 +1396,7 @@
       "title": "48. Tuscan Herbs Chicken Steak",
       "subtitle": "Italian herb butter glaze with subtle spice notes",
       "category": "steaks",
-      "price": 5.2632,
+      "price": 1500,
       "rating": 4.88,
       "reviewsCount": 85,
       "badge": "Italian Sizzler",
@@ -1405,7 +1405,7 @@
       "gallery": [
         "assets/images/truffle-mushroom-steak-poster.jpg"
       ],
-      "description": "Flame-grilled chicken fillet glazed in roasted garlic herb butter, rosemary, thyme, and sun-dried tomato essence. Served on a sizzling hot plate with butter-saut\u00e9ed seasonal vegetables and crispy fries.",
+      "description": "Flame-grilled chicken fillet glazed in roasted garlic herb butter, rosemary, thyme, and sun-dried tomato essence. Served on a sizzling hot plate with butter-sautéed seasonal vegetables and crispy fries.",
       "dietary": [
         "Sizzling Skillet",
         "Continental"
@@ -1421,7 +1421,7 @@
       "addons": [
         {
           "name": "Extra Herb Garlic Butter Sauce",
-          "price": 0.7
+          "price": 200
         }
       ]
     },
@@ -1430,7 +1430,7 @@
       "title": "49. Mexican Chipotle Chicken Steak",
       "subtitle": "Smoky chicken infused with chipotle and fresh lime",
       "category": "steaks",
-      "price": 5.2632,
+      "price": 1500,
       "rating": 4.9,
       "reviewsCount": 92,
       "badge": "Zesty Heat",
@@ -1455,7 +1455,7 @@
       "addons": [
         {
           "name": "Extra Chipotle Sauce",
-          "price": 0.7
+          "price": 200
         }
       ]
     },
@@ -1464,7 +1464,7 @@
       "title": "50. Truffle Mushroom Chicken Steak",
       "subtitle": "Creamy mushroom sauce with a hint of black truffle",
       "category": "steaks",
-      "price": 5.2632,
+      "price": 1500,
       "rating": 4.95,
       "reviewsCount": 142,
       "badge": "Signature Star",
@@ -1488,17 +1488,17 @@
         },
         {
           "name": "Double Fillet Grand Platter",
-          "priceDelta": 2.1053
+          "priceDelta": 600
         }
       ],
       "addons": [
         {
           "name": "Extra Creamy Truffle Mushroom Sauce",
-          "price": 0.7719
+          "price": 220
         },
         {
-          "name": "Garlic Butter Saut\u00e9ed Mushrooms",
-          "price": 0.8772
+          "name": "Garlic Butter Sautéed Mushrooms",
+          "price": 250
         }
       ]
     },
@@ -1507,7 +1507,7 @@
       "title": "51. Black Peppercorn Chicken Steak",
       "subtitle": "Classic pepper-marinated chicken in rich peppercorn reduction",
       "category": "steaks",
-      "price": 5.2632,
+      "price": 1500,
       "rating": 4.85,
       "reviewsCount": 78,
       "badge": "Classic Pepper",
@@ -1536,7 +1536,7 @@
       "title": "52. Smoky Barbecue Chicken Steak",
       "subtitle": "Chargrilled chicken glazed with bold, house-style smoky BBQ sauce",
       "category": "steaks",
-      "price": 5.2632,
+      "price": 1500,
       "rating": 4.88,
       "reviewsCount": 86,
       "badge": "Smoky Glaze",
@@ -1565,7 +1565,7 @@
       "title": "Fire-Glazed Salsa Chicken Steak",
       "subtitle": "Smoky, zesty & sizzling to perfection",
       "category": "steaks",
-      "price": 5.2632,
+      "price": 1500,
       "rating": 4.8,
       "reviewsCount": 98,
       "badge": "Spicy Favorite",
@@ -1574,7 +1574,7 @@
       "gallery": [
         "assets/images/fire-glazed-mexican-steak.jpg"
       ],
-      "description": "Char-grilled succulent chicken fillet drenched in spicy Mexican roasted pepper and tomato glaze, saut\u00e9ed sweet corn, black Kalamata olives, caramelized baby onions, and garden vegetables.",
+      "description": "Char-grilled succulent chicken fillet drenched in spicy Mexican roasted pepper and tomato glaze, sautéed sweet corn, black Kalamata olives, caramelized baby onions, and garden vegetables.",
       "dietary": [
         "Spicy",
         "High Protein"
@@ -1594,7 +1594,7 @@
       "title": "60. Smoky BBQ Chicken Pizza",
       "subtitle": "Wood-fired crust with smoky chicken, onions & mozzarella",
       "category": "pizza",
-      "price": 2.9825,
+      "price": 850,
       "rating": 4.9,
       "reviewsCount": 115,
       "badge": "Pizza Star",
@@ -1617,17 +1617,17 @@
         },
         {
           "name": "Medium 10\" (2-Person)",
-          "priceDelta": 1.7175000000000002
+          "priceDelta": 489
         },
         {
           "name": "Large 13\" (4-Person)",
-          "priceDelta": 3.8947000000000003
+          "priceDelta": 1110
         }
       ],
       "addons": [
         {
           "name": "Extra Mozzarella Melt",
-          "price": 0.7
+          "price": 200
         }
       ]
     },
@@ -1636,7 +1636,7 @@
       "title": "62. Chargrilled Tikka Pizza",
       "subtitle": "Desi tikka spices with a golden cheese crust and mild heat",
       "category": "pizza",
-      "price": 2.7368,
+      "price": 780,
       "rating": 4.92,
       "reviewsCount": 130,
       "badge": "Desi Fusion",
@@ -1659,17 +1659,17 @@
         },
         {
           "name": "Medium 10\" (2-Person)",
-          "priceDelta": 1.4913000000000003
+          "priceDelta": 425
         },
         {
           "name": "Large 13\" (4-Person)",
-          "priceDelta": 3.6131999999999995
+          "priceDelta": 1030
         }
       ],
       "addons": [
         {
           "name": "Stuffed Cheesy Crust",
-          "price": 0.8772
+          "price": 250
         }
       ]
     },
@@ -1678,7 +1678,7 @@
       "title": "63. Mexican Fajita Chicken Pizza",
       "subtitle": "Fajita-spiced chicken, peppers, and tangy salsa drizzle",
       "category": "pizza",
-      "price": 2.7368,
+      "price": 780,
       "rating": 4.88,
       "reviewsCount": 94,
       "badge": "Fiesta Flavor",
@@ -1701,11 +1701,11 @@
         },
         {
           "name": "Medium 10\" (2-Person)",
-          "priceDelta": 1.4913000000000003
+          "priceDelta": 425
         },
         {
           "name": "Large 13\" (4-Person)",
-          "priceDelta": 3.6131999999999995
+          "priceDelta": 1030
         }
       ],
       "addons": []
@@ -1715,7 +1715,7 @@
       "title": "66. Chef's Signature Shangrilla Pizza",
       "subtitle": "House special layered with premium toppings and secret sauce",
       "category": "pizza",
-      "price": 3.0175,
+      "price": 860,
       "rating": 4.96,
       "reviewsCount": 150,
       "badge": "Chef Special",
@@ -1738,17 +1738,17 @@
         },
         {
           "name": "Medium 10\" (2-Person)",
-          "priceDelta": 1.7895000000000003
+          "priceDelta": 510
         },
         {
           "name": "Large 13\" (4-Person)",
-          "priceDelta": 3.6666999999999996
+          "priceDelta": 1045
         }
       ],
       "addons": [
         {
           "name": "Garlic Mayo Dip Sauce",
-          "price": 0.28
+          "price": 80
         }
       ]
     },
@@ -1757,7 +1757,7 @@
       "title": "72. Achari Spiced Chicken",
       "subtitle": "Tender chicken simmered in a tangy blend of pickling spices",
       "category": "handi",
-      "price": 6.63,
+      "price": 1890,
       "rating": 4.9,
       "reviewsCount": 85,
       "badge": "Tangy Desi",
@@ -1782,7 +1782,7 @@
       "addons": [
         {
           "name": "Roghni Naan",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -1791,7 +1791,7 @@
       "title": "74. Classic Chicken Karahi",
       "subtitle": "Cooked in fresh tomato, ginger, and green chili masala",
       "category": "handi",
-      "price": 8.42,
+      "price": 2400,
       "rating": 4.92,
       "reviewsCount": 165,
       "badge": "Karahi Classic",
@@ -1814,13 +1814,13 @@
         },
         {
           "name": "Half Karahi (Serves 1-2)",
-          "priceDelta": -2.806
+          "priceDelta": -800
         }
       ],
       "addons": [
         {
           "name": "Extra Desi Makhan Ghee Dollop",
-          "price": 0.42
+          "price": 120
         }
       ]
     },
@@ -1829,7 +1829,7 @@
       "title": "76. Chef's Handcrafted Chicken Handi",
       "subtitle": "Rich and creamy handi-style boneless chicken with velvety finish",
       "category": "handi",
-      "price": 10.1053,
+      "price": 2880,
       "rating": 4.98,
       "reviewsCount": 210,
       "badge": "Handi Royal",
@@ -1852,13 +1852,13 @@
         },
         {
           "name": "Half Handi (Serves 1-2)",
-          "priceDelta": -3.6152999999999995
+          "priceDelta": -1030
         }
       ],
       "addons": [
         {
           "name": "Garlic Naan Pair",
-          "price": 0.8421
+          "price": 240
         }
       ]
     },
@@ -1867,7 +1867,7 @@
       "title": "78. Ginger-Infused Chicken",
       "subtitle": "Pan-seared chicken tossed with ginger and bold Desi flavors",
       "category": "handi",
-      "price": 6.9825,
+      "price": 1990,
       "rating": 4.88,
       "reviewsCount": 64,
       "badge": "Ginger Aromatic",
@@ -1896,7 +1896,7 @@
       "title": "79. Smoked Chicken Bartha",
       "subtitle": "Pulled chicken slow-cooked in roasted spices and smoky tomato gravy",
       "category": "handi",
-      "price": 6.9825,
+      "price": 1990,
       "rating": 4.9,
       "reviewsCount": 72,
       "badge": "Smoked Delicacy",
@@ -1925,7 +1925,7 @@
       "title": "81. Chicken Jalfrezi",
       "subtitle": "Stir-fried chicken with bell peppers, onions, and tomato glaze",
       "category": "handi",
-      "price": 7.51,
+      "price": 2140,
       "rating": 4.88,
       "reviewsCount": 80,
       "badge": "Wok Glaze",
@@ -1954,7 +1954,7 @@
       "title": "82. Chicken Taka Tak",
       "subtitle": "Sizzling street-style favorite, minced on high flame with masala",
       "category": "handi",
-      "price": 7.51,
+      "price": 2140,
       "rating": 4.92,
       "reviewsCount": 115,
       "badge": "Street Sizzle",
@@ -1983,7 +1983,7 @@
       "title": "83. Butter Chicken Masala",
       "subtitle": "Succulent chicken simmered in rich buttery tomato sauce with cream",
       "category": "handi",
-      "price": 8.07,
+      "price": 2300,
       "rating": 4.96,
       "reviewsCount": 145,
       "badge": "Creamy Indulgence",
@@ -2008,7 +2008,7 @@
       "addons": [
         {
           "name": "Hot Roghni Naan",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -2017,8 +2017,8 @@
       "title": "89. Mutton Leg Steam Roast House Special",
       "subtitle": "Whole prime mutton leg marinated and slow-steamed to falling-off-the-bone tenderness",
       "category": "handi",
-      "price": 21.4035,
-      "rating": 5.0,
+      "price": 6100,
+      "rating": 5,
       "reviewsCount": 95,
       "badge": "Grand Royal",
       "featured": true,
@@ -2043,7 +2043,7 @@
       "addons": [
         {
           "name": "Extra Basmati Zeera Rice Platter",
-          "price": 1.7544
+          "price": 500
         }
       ]
     },
@@ -2052,7 +2052,7 @@
       "title": "90. Traditional Mutton Karahi",
       "subtitle": "Classic karahi-style mutton cooked in rich tomato and garlic masala",
       "category": "handi",
-      "price": 14.21,
+      "price": 4050,
       "rating": 4.95,
       "reviewsCount": 138,
       "badge": "Mutton Classic",
@@ -2075,7 +2075,7 @@
         },
         {
           "name": "Half Karahi (Serves 1-2)",
-          "priceDelta": -4.91
+          "priceDelta": -1399
         }
       ],
       "addons": []
@@ -2085,7 +2085,7 @@
       "title": "92. Mutton Handi Supreme",
       "subtitle": "Creamy, slow-simmered mutton handi with balanced Desi spices",
       "category": "handi",
-      "price": 16.7719,
+      "price": 4780,
       "rating": 4.98,
       "reviewsCount": 120,
       "badge": "Royal Mutton",
@@ -2108,7 +2108,7 @@
         },
         {
           "name": "Half Handi (Serves 1-2)",
-          "priceDelta": -6.071899999999999
+          "priceDelta": -1730
         }
       ],
       "addons": []
@@ -2118,7 +2118,7 @@
       "title": "94. Mutton Ginger With Bone",
       "subtitle": "Bone-in mutton infused with fresh ginger and mild spices",
       "category": "handi",
-      "price": 9.3,
+      "price": 2651,
       "rating": 4.88,
       "reviewsCount": 58,
       "badge": "Ginger Mutton",
@@ -2147,7 +2147,7 @@
       "title": "95. Mutton Green Chilli Lemon",
       "subtitle": "Zesty mutton cooked with green chilies and fresh lemon",
       "category": "handi",
-      "price": 14.21,
+      "price": 4050,
       "rating": 4.94,
       "reviewsCount": 65,
       "badge": "Zesty Spice",
@@ -2176,7 +2176,7 @@
       "title": "97. Brain Masala (Mughlai Style)",
       "subtitle": "Classic delicacy tossed in Desi masala with ghee and herbs",
       "category": "handi",
-      "price": 7.8947,
+      "price": 2250,
       "rating": 4.9,
       "reviewsCount": 74,
       "badge": "Mughlai Delicacy",
@@ -2205,7 +2205,7 @@
       "title": "98. Shahi Daal Tadka",
       "subtitle": "Creamy lentils tempered with garlic butter and mild spices",
       "category": "handi",
-      "price": 2.7719,
+      "price": 790,
       "rating": 4.85,
       "reviewsCount": 85,
       "badge": "Vegetarian Comfort",
@@ -2234,7 +2234,7 @@
       "title": "99. Plain Mixed Vegetable",
       "subtitle": "Seasonal vegetables sauteed with light Desi seasoning",
       "category": "handi",
-      "price": 3.0526,
+      "price": 870,
       "rating": 4.8,
       "reviewsCount": 52,
       "badge": "Farm Fresh",
@@ -2263,8 +2263,8 @@
       "title": "100. Chicken Hari Mirch Masala",
       "subtitle": "Zesty chicken cooked with green chillies in rich aromatic spices",
       "category": "handi",
-      "price": 7.14,
-      "rating": 5.0,
+      "price": 2035,
+      "rating": 5,
       "reviewsCount": 215,
       "badge": "Royal Special",
       "featured": true,
@@ -2287,13 +2287,13 @@
         },
         {
           "name": "Full Handi (Serves 3-4)",
-          "priceDelta": 3.51
+          "priceDelta": 1000
         }
       ],
       "addons": [
         {
           "name": "Hot Roghani Naan Pairing",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -2302,7 +2302,7 @@
       "title": "112. Dhaka-style Fried Fish (8 Pcs)",
       "subtitle": "Crisp golden fish fillets in Dhaka's signature spice blend",
       "category": "seafood",
-      "price": 13.3333,
+      "price": 3800,
       "rating": 4.96,
       "reviewsCount": 118,
       "badge": "Signature Fish",
@@ -2328,7 +2328,7 @@
       "addons": [
         {
           "name": "Extra Tartar Dip",
-          "price": 0.35
+          "price": 100
         }
       ]
     },
@@ -2337,7 +2337,7 @@
       "title": "113. Crispy Fish Fingers (12 Pcs)",
       "subtitle": "Tender fish strips coated in seasoned crumbs with tartar dip",
       "category": "seafood",
-      "price": 13.3333,
+      "price": 3800,
       "rating": 4.9,
       "reviewsCount": 85,
       "badge": "Crispy Favorite",
@@ -2366,7 +2366,7 @@
       "title": "115. Grilled Fish Fillet (2 Pcs)",
       "subtitle": "Chargrilled fillet brushed with olive oil and herbs",
       "category": "seafood",
-      "price": 13.3333,
+      "price": 3800,
       "rating": 4.95,
       "reviewsCount": 92,
       "badge": "Healthy Grill",
@@ -2396,7 +2396,7 @@
       "title": "119. Classic Chicken Biryani",
       "subtitle": "Aromatic basmati layered with chicken and saffron masala",
       "category": "rice",
-      "price": 3.86,
+      "price": 1100,
       "rating": 4.95,
       "reviewsCount": 180,
       "badge": "Biryani Star",
@@ -2421,7 +2421,7 @@
       "addons": [
         {
           "name": "Mint Raita Bowl",
-          "price": 0.5965
+          "price": 170
         }
       ]
     },
@@ -2430,7 +2430,7 @@
       "title": "120. Chicken Fried Rice",
       "subtitle": "Wok-tossed basmati rice with chicken, egg, and fresh vegetables",
       "category": "rice",
-      "price": 4.9123,
+      "price": 1400,
       "rating": 4.9,
       "reviewsCount": 135,
       "badge": "Wok Master",
@@ -2453,7 +2453,7 @@
         },
         {
           "name": "Half Platter (Serves 1-2)",
-          "priceDelta": -1.6491000000000002
+          "priceDelta": -470
         }
       ],
       "addons": []
@@ -2463,7 +2463,7 @@
       "title": "122. Chicken Masala Rice",
       "subtitle": "Spicy masala rice blended with tender chicken and Desi seasoning",
       "category": "rice",
-      "price": 4.9123,
+      "price": 1400,
       "rating": 4.88,
       "reviewsCount": 94,
       "badge": "Desi Heat",
@@ -2486,7 +2486,7 @@
         },
         {
           "name": "Half Platter (Serves 1-2)",
-          "priceDelta": -1.6491000000000002
+          "priceDelta": -470
         }
       ],
       "addons": []
@@ -2496,7 +2496,7 @@
       "title": "124. Egg Fried Rice",
       "subtitle": "Golden rice tossed with egg, garlic, and subtle soy hint",
       "category": "rice",
-      "price": 4.21,
+      "price": 1200,
       "rating": 4.85,
       "reviewsCount": 78,
       "badge": "Oriental Classic",
@@ -2519,7 +2519,7 @@
         },
         {
           "name": "Half Bowl (Serves 1-2)",
-          "priceDelta": -1.4731999999999998
+          "priceDelta": -420
         }
       ],
       "addons": []
@@ -2529,7 +2529,7 @@
       "title": "126. Chicken Shashlik Rice",
       "subtitle": "Flame-grilled chicken skewers atop fried rice with tangy sauce",
       "category": "rice",
-      "price": 6.7719,
+      "price": 1930,
       "rating": 4.95,
       "reviewsCount": 110,
       "badge": "Shashlik Special",
@@ -2558,7 +2558,7 @@
       "title": "127. Vegetable Fried Rice",
       "subtitle": "Colorful stir-fried vegetables with seasoned basmati",
       "category": "rice",
-      "price": 4.21,
+      "price": 1200,
       "rating": 4.8,
       "reviewsCount": 60,
       "badge": "Vegetarian",
@@ -2581,7 +2581,7 @@
         },
         {
           "name": "Half Platter (Serves 1-2)",
-          "priceDelta": -1.4731999999999998
+          "priceDelta": -420
         }
       ],
       "addons": []
@@ -2591,7 +2591,7 @@
       "title": "135. Kalwanji Naan",
       "subtitle": "Soft naan sprinkled with black nigella seeds for nutty aroma",
       "category": "naans",
-      "price": 0.42,
+      "price": 120,
       "rating": 4.88,
       "reviewsCount": 92,
       "badge": "Aromatic Naan",
@@ -2620,7 +2620,7 @@
       "title": "136. Traditional Roghni Sesame Naan",
       "subtitle": "Buttery, golden naan baked to delicate perfection",
       "category": "naans",
-      "price": 0.35,
+      "price": 100,
       "rating": 4.95,
       "reviewsCount": 180,
       "badge": "House Favorite",
@@ -2643,7 +2643,7 @@
         },
         {
           "name": "Pack of 3 Naans",
-          "priceDelta": 0.7
+          "priceDelta": 200
         }
       ],
       "addons": []
@@ -2653,7 +2653,7 @@
       "title": "137. Ginger Naan",
       "subtitle": "Fresh ginger and mild aromatic spice",
       "category": "naans",
-      "price": 0.42,
+      "price": 120,
       "rating": 4.85,
       "reviewsCount": 65,
       "badge": "Zingy Crust",
@@ -2682,7 +2682,7 @@
       "title": "138. Garlic Naan",
       "subtitle": "Signature tandoori naan infused with roasted garlic butter",
       "category": "naans",
-      "price": 0.42,
+      "price": 120,
       "rating": 4.95,
       "reviewsCount": 150,
       "badge": "Top Seller",
@@ -2711,7 +2711,7 @@
       "title": "139. Lahori Kulcha",
       "subtitle": "Crisp and fluffy flatbread, a Lahori classic from the Tandoor",
       "category": "naans",
-      "price": 0.2456,
+      "price": 70,
       "rating": 4.88,
       "reviewsCount": 110,
       "badge": "Lahori Classic",
@@ -2740,7 +2740,7 @@
       "title": "140. Tandoori Paratha",
       "subtitle": "Flaky whole-wheat paratha cooked with desi ghee in the tandoor",
       "category": "naans",
-      "price": 0.42,
+      "price": 120,
       "rating": 4.9,
       "reviewsCount": 105,
       "badge": "Desi Ghee",
@@ -2769,7 +2769,7 @@
       "title": "141. Achari Paratha",
       "subtitle": "Tangy, spiced paratha infused with traditional achar flavors",
       "category": "naans",
-      "price": 0.51,
+      "price": 145,
       "rating": 4.85,
       "reviewsCount": 75,
       "badge": "Tangy Twist",
@@ -2798,7 +2798,7 @@
       "title": "142. Tandoori Roti (Per Head)",
       "subtitle": "Freshly cooked whole-wheat roti straight from the clay oven",
       "category": "naans",
-      "price": 0.49,
+      "price": 140,
       "rating": 4.8,
       "reviewsCount": 130,
       "badge": "Clay Oven",
@@ -2827,7 +2827,7 @@
       "title": "Special Artisan Tandoor Naans Platter",
       "subtitle": "Four Master Breads Straight from the Clay Oven",
       "category": "naans",
-      "price": 1.75,
+      "price": 499,
       "rating": 4.9,
       "reviewsCount": 184,
       "badge": "Signature Bake",
@@ -2856,7 +2856,7 @@
       "title": "151. Crispy Chicken Drumsticks (8 Pcs)",
       "subtitle": "Golden-fried chicken drumsticks glazed in mild Oriental spice",
       "category": "chinese",
-      "price": 8.49,
+      "price": 2420,
       "rating": 4.92,
       "reviewsCount": 88,
       "badge": "Oriental Crunch",
@@ -2879,7 +2879,7 @@
         },
         {
           "name": "Half Portion (4 Pcs)",
-          "priceDelta": -3.4023000000000003
+          "priceDelta": -970
         }
       ],
       "addons": []
@@ -2889,7 +2889,7 @@
       "title": "153. Chicken Chilli Dry",
       "subtitle": "Crispy fried chicken infused with signature chili blend and scallions",
       "category": "chinese",
-      "price": 7.0175,
+      "price": 2000,
       "rating": 4.95,
       "reviewsCount": 160,
       "badge": "Chinese Favorite",
@@ -2914,7 +2914,7 @@
       "addons": [
         {
           "name": "Egg Fried Rice Pairing",
-          "price": 2.7368
+          "price": 780
         }
       ]
     },
@@ -2923,7 +2923,7 @@
       "title": "154. Chicken Chow Mein",
       "subtitle": "Classic noodles stir-fried with chicken, vegetables, and soy glaze",
       "category": "chinese",
-      "price": 3.86,
+      "price": 1100,
       "rating": 4.9,
       "reviewsCount": 140,
       "badge": "Classic Noodles",
@@ -2952,7 +2952,7 @@
       "title": "155. Chicken Manchurian",
       "subtitle": "Crispy chicken bites in a tangy Indo-Chinese Manchurian sauce",
       "category": "chinese",
-      "price": 7.0175,
+      "price": 2000,
       "rating": 4.92,
       "reviewsCount": 155,
       "badge": "Saucy Star",
@@ -2977,7 +2977,7 @@
       "addons": [
         {
           "name": "Fried Rice Pairing",
-          "price": 2.7368
+          "price": 780
         }
       ]
     },
@@ -2986,7 +2986,7 @@
       "title": "156. Sweet & Sour Pineapple Chicken",
       "subtitle": "Juicy chicken tossed in sweet and tangy pineapple reduction",
       "category": "chinese",
-      "price": 8.0,
+      "price": 2280,
       "rating": 4.88,
       "reviewsCount": 85,
       "badge": "Sweet & Tangy",
@@ -3015,7 +3015,7 @@
       "title": "157. Chicken With Almonds",
       "subtitle": "Stir-fried chicken with roasted almonds and aromatic soy glaze",
       "category": "chinese",
-      "price": 7.3333,
+      "price": 2090,
       "rating": 4.9,
       "reviewsCount": 72,
       "badge": "Nutty Glaze",
@@ -3044,7 +3044,7 @@
       "title": "158. Chicken In Oyster Sauce",
       "subtitle": "Succulent chicken in a savory oyster-infused brown sauce",
       "category": "chinese",
-      "price": 7.3333,
+      "price": 2090,
       "rating": 4.88,
       "reviewsCount": 65,
       "badge": "Savory Umami",
@@ -3073,7 +3073,7 @@
       "title": "159. Chicken With Cashew Nuts",
       "subtitle": "Wok-tossed chicken and cashews in flavorful ginger-garlic sauce",
       "category": "chinese",
-      "price": 7.86,
+      "price": 2240,
       "rating": 4.94,
       "reviewsCount": 98,
       "badge": "Cashew Crunch",
@@ -3102,7 +3102,7 @@
       "title": "160. Honey Glazed Chicken Wings (12 Pcs)",
       "subtitle": "Crispy wings coated in sweet honey and chili glaze",
       "category": "chinese",
-      "price": 5.614,
+      "price": 1600,
       "rating": 4.9,
       "reviewsCount": 82,
       "badge": "Honey Glazed",
@@ -3129,9 +3129,9 @@
     {
       "id": "garlic-and-mushroom-chicken",
       "title": "161. Garlic & Mushroom Chicken",
-      "subtitle": "Tender chicken strips saut\u00e9ed with garlic and mushrooms in light soy",
+      "subtitle": "Tender chicken strips sautéed with garlic and mushrooms in light soy",
       "category": "chinese",
-      "price": 6.5263,
+      "price": 1860,
       "rating": 4.88,
       "reviewsCount": 64,
       "badge": "Garlic Mushroom",
@@ -3160,7 +3160,7 @@
       "title": "162. Stir-Fried Chicken with Vegetables",
       "subtitle": "Lean chicken tossed with seasonal greens and sesame hint",
       "category": "chinese",
-      "price": 5.44,
+      "price": 1550,
       "rating": 4.85,
       "reviewsCount": 58,
       "badge": "Healthy Choice",
@@ -3189,7 +3189,7 @@
       "title": "163. Beef Chilli Dry",
       "subtitle": "Spicy wok-tossed beef with garlic and green chilies",
       "category": "chinese",
-      "price": 7.37,
+      "price": 2100,
       "rating": 4.94,
       "reviewsCount": 112,
       "badge": "Spicy Beef",
@@ -3218,7 +3218,7 @@
       "title": "171. Pina Colada",
       "subtitle": "A tropical fusion of pineapple, coconut, and crushed ice bliss",
       "category": "beverages",
-      "price": 1.193,
+      "price": 340,
       "rating": 4.95,
       "reviewsCount": 120,
       "badge": "Bar Special",
@@ -3247,7 +3247,7 @@
       "title": "172. Pink Lady",
       "subtitle": "Refreshing blend of citrus, grenadine, and creamy notes",
       "category": "beverages",
-      "price": 1.193,
+      "price": 340,
       "rating": 4.9,
       "reviewsCount": 75,
       "badge": "Berry Splash",
@@ -3275,7 +3275,7 @@
       "title": "173. Spanish Margarita",
       "subtitle": "Zesty lemon and tangy orange balanced with a salty rim",
       "category": "beverages",
-      "price": 1.1579,
+      "price": 330,
       "rating": 4.92,
       "reviewsCount": 94,
       "badge": "Citrus Zest",
@@ -3298,7 +3298,7 @@
         },
         {
           "name": "Diet (Sugar-Free)",
-          "priceDelta": 0.03510000000000013
+          "priceDelta": 10
         }
       ],
       "addons": []
@@ -3308,7 +3308,7 @@
       "title": "174. Classic Lemonade",
       "subtitle": "Freshly squeezed lemon with chilled soda and mint hint",
       "category": "beverages",
-      "price": 1.49,
+      "price": 425,
       "rating": 4.95,
       "reviewsCount": 115,
       "badge": "Minty Fresh",
@@ -3337,7 +3337,7 @@
       "title": "186. Kiwi Lemonade",
       "subtitle": "Vibrant green kiwi blend with tangy lemon",
       "category": "beverages",
-      "price": 0.9649,
+      "price": 275,
       "rating": 4.88,
       "reviewsCount": 65,
       "badge": "Kiwi Cooler",
@@ -3366,7 +3366,7 @@
       "title": "187. Fruity Mix Lemonade",
       "subtitle": "A medley of exotic fruit flavors with lime zest",
       "category": "beverages",
-      "price": 0.9649,
+      "price": 275,
       "rating": 4.88,
       "reviewsCount": 58,
       "badge": "Exotic Medley",
@@ -3395,7 +3395,7 @@
       "title": "188. Blue Lemonade",
       "subtitle": "Electric blue citrus cooler with a hint of mint",
       "category": "beverages",
-      "price": 0.9649,
+      "price": 275,
       "rating": 4.9,
       "reviewsCount": 82,
       "badge": "Electric Blue",
@@ -3423,7 +3423,7 @@
       "title": "189. Cold Drink 1 Ltr",
       "subtitle": "Refreshing carbonated beverage (Coke / Sprite / Fanta)",
       "category": "beverages",
-      "price": 0.7719,
+      "price": 220,
       "rating": 4.8,
       "reviewsCount": 110,
       "badge": "1 Litre Bottle",
@@ -3452,7 +3452,7 @@
       "title": "190. Mineral Water",
       "subtitle": "Pure bottled water (served chilled)",
       "category": "beverages",
-      "price": 0.51,
+      "price": 145,
       "rating": 4.9,
       "reviewsCount": 120,
       "badge": "Hydration",
@@ -3481,7 +3481,7 @@
       "title": "191. Classic Soft Drinks (Regular)",
       "subtitle": "Refreshing carbonated beverages (Coke, Sprite, Fanta)",
       "category": "beverages",
-      "price": 0.35,
+      "price": 100,
       "rating": 4.8,
       "reviewsCount": 140,
       "badge": "Chilled Soda",
@@ -3509,7 +3509,7 @@
       "title": "192. Cold Drink (Can)",
       "subtitle": "Chilled soft drink served in tin pack (Coke, Sprite, Fanta)",
       "category": "beverages",
-      "price": 0.56,
+      "price": 160,
       "rating": 4.85,
       "reviewsCount": 95,
       "badge": "250ml Can",
@@ -3541,7 +3541,7 @@
       "title": "194. Lassi (Jug)",
       "subtitle": "Rich yogurt-based drink, smooth and refreshing (Sweet / Salted)",
       "category": "beverages",
-      "price": 1.58,
+      "price": 450,
       "rating": 4.96,
       "reviewsCount": 115,
       "badge": "Desi Quencher",
@@ -3570,7 +3570,7 @@
       "title": "195. Fresh Lime",
       "subtitle": "Citrusy fresh lime cooler (Water / Sprite / Diet Sprite)",
       "category": "beverages",
-      "price": 0.7719,
+      "price": 220,
       "rating": 4.9,
       "reviewsCount": 105,
       "badge": "Thirst Quencher",
@@ -3596,10 +3596,10 @@
     },
     {
       "id": "nestle-juice",
-      "title": "199. Nestl\u00e9 Juice",
+      "title": "199. Nestlé Juice",
       "subtitle": "Ready-to-serve fruit juice selection (Apple, Orange, Mango)",
       "category": "beverages",
-      "price": 0.63,
+      "price": 180,
       "rating": 4.8,
       "reviewsCount": 50,
       "badge": "Fruit Juice",
@@ -3608,7 +3608,7 @@
       "gallery": [
         "assets/images/signature-drinks.jpg"
       ],
-      "description": "Chilled premium 200ml fruit juice pack from Nestl\u00e9: Chaunsa Mango, Red Apple, or Citrus Orange.",
+      "description": "Chilled premium 200ml fruit juice pack from Nestlé: Chaunsa Mango, Red Apple, or Citrus Orange.",
       "dietary": [
         "Vitamin C",
         "Kid Friendly"
@@ -3628,7 +3628,7 @@
       "title": "200. Fresh Seasonal Juice",
       "subtitle": "Extracted from fresh fruits of the season",
       "category": "beverages",
-      "price": 1.193,
+      "price": 340,
       "rating": 4.95,
       "reviewsCount": 85,
       "badge": "100% Pure",
@@ -3657,7 +3657,7 @@
       "title": "211. Shangrilla Gourmet Milkshakes",
       "subtitle": "Thick ice cream shakes (Oreo, Vanilla, Strawberry, Chocolate)",
       "category": "beverages",
-      "price": 1.37,
+      "price": 390,
       "rating": 4.95,
       "reviewsCount": 140,
       "badge": "Creamy Thick",
@@ -3694,7 +3694,7 @@
       "addons": [
         {
           "name": "Extra Whipped Cream & Fudge Drizzle",
-          "price": 0.28
+          "price": 80
         }
       ]
     },
@@ -3703,7 +3703,7 @@
       "title": "Shangrilla Royal Refreshers (Pair)",
       "subtitle": "Frosty Mint Lemonade & Passionfruit Cooler",
       "category": "beverages",
-      "price": 2.9825,
+      "price": 850,
       "rating": 4.9,
       "reviewsCount": 74,
       "badge": "House Specialty",
@@ -3727,7 +3727,7 @@
         },
         {
           "name": "Pitcher Size (Serves 4)",
-          "priceDelta": 2.28
+          "priceDelta": 650
         }
       ],
       "addons": []
@@ -3737,7 +3737,7 @@
       "title": "196. Cardamom Tea",
       "subtitle": "Infused with fragrant green cardamom pods and rich dairy milk",
       "category": "hotbrews",
-      "price": 0.56,
+      "price": 160,
       "rating": 4.95,
       "reviewsCount": 110,
       "badge": "Elaichi Chai",
@@ -3766,7 +3766,7 @@
       "title": "197. Classic Tea",
       "subtitle": "Freshly brewed Pakistani tea served warm",
       "category": "hotbrews",
-      "price": 0.42,
+      "price": 120,
       "rating": 4.85,
       "reviewsCount": 95,
       "badge": "Daily Karak",
@@ -3794,7 +3794,7 @@
       "title": "198. Green Tea / Kehwa",
       "subtitle": "Refreshing and light green brew for a calming finish",
       "category": "hotbrews",
-      "price": 0.35,
+      "price": 100,
       "rating": 4.88,
       "reviewsCount": 80,
       "badge": "Peshawari Kehwa",
@@ -3823,7 +3823,7 @@
       "title": "208. Cappuccino",
       "subtitle": "Rich espresso topped with velvety froth and cocoa dust",
       "category": "hotbrews",
-      "price": 1.193,
+      "price": 340,
       "rating": 4.9,
       "reviewsCount": 88,
       "badge": "Barista Brew",
@@ -3849,10 +3849,10 @@
     },
     {
       "id": "cafe-latte",
-      "title": "209. Caf\u00e9 Latte",
+      "title": "209. Café Latte",
       "subtitle": "Smooth espresso layered with steamed milk and light foam",
       "category": "hotbrews",
-      "price": 1.193,
+      "price": 340,
       "rating": 4.88,
       "reviewsCount": 75,
       "badge": "Smooth Latte",
@@ -3880,7 +3880,7 @@
       "title": "210. Hot Chocolate",
       "subtitle": "Silky chocolate indulgence with whipped cream topping",
       "category": "hotbrews",
-      "price": 1.193,
+      "price": 340,
       "rating": 4.95,
       "reviewsCount": 90,
       "badge": "Chocolate Hug",
@@ -3909,7 +3909,7 @@
       "title": "201. Premium Ice Cream",
       "subtitle": "Kulfa, Vanilla, Strawberry, Mango, or Chocolate",
       "category": "desserts",
-      "price": 0.8421,
+      "price": 240,
       "rating": 4.9,
       "reviewsCount": 110,
       "badge": "Double Scoop",
@@ -3931,7 +3931,7 @@
         },
         {
           "name": "Single Scoop",
-          "priceDelta": -0.21209999999999996
+          "priceDelta": -60
         }
       ],
       "addons": []
@@ -3941,7 +3941,7 @@
       "title": "203. Kulfa Falooda",
       "subtitle": "Classic Desi delight with kulfa, vermicelli, and rose syrup",
       "category": "desserts",
-      "price": 1.0526,
+      "price": 300,
       "rating": 4.98,
       "reviewsCount": 135,
       "badge": "Desi Heritage",
@@ -3970,7 +3970,7 @@
       "title": "204. Gajar Halwa (Seasonal)",
       "subtitle": "Classic carrot halwa slow-cooked in pure ghee and milk",
       "category": "desserts",
-      "price": 1.0526,
+      "price": 300,
       "rating": 4.95,
       "reviewsCount": 125,
       "badge": "Winter Warmth",
@@ -3996,7 +3996,7 @@
       "addons": [
         {
           "name": "Khoya Mawa Topping",
-          "price": 0.28
+          "price": 80
         }
       ]
     },
@@ -4005,7 +4005,7 @@
       "title": "205. Kheer / Custard (Seasonal)",
       "subtitle": "Traditional rice pudding or vanilla custard, served chilled",
       "category": "desserts",
-      "price": 1.0526,
+      "price": 300,
       "rating": 4.9,
       "reviewsCount": 85,
       "badge": "Clay Pot Kheer",
@@ -4034,7 +4034,7 @@
       "title": "206. Lab-e-Shireen (Seasonal)",
       "subtitle": "Creamy milk dessert with fruits, jelly, and vermicelli",
       "category": "desserts",
-      "price": 1.14,
+      "price": 325,
       "rating": 4.92,
       "reviewsCount": 94,
       "badge": "Festive Sweet",
@@ -4063,7 +4063,7 @@
       "title": "207. Gulab Jamun",
       "subtitle": "Soft, syrup-soaked milk dumplings served warm",
       "category": "desserts",
-      "price": 0.5263,
+      "price": 150,
       "rating": 4.95,
       "reviewsCount": 140,
       "badge": "Warm Classic",
@@ -4092,7 +4092,7 @@
       "title": "215. Molten Lava Cake",
       "subtitle": "Warm chocolate cake with gooey molten center, served with ice cream",
       "category": "desserts",
-      "price": 1.8947,
+      "price": 540,
       "rating": 4.98,
       "reviewsCount": 165,
       "badge": "Decadent Star",
@@ -4121,7 +4121,7 @@
       "title": "216. Chocolate Brownie / Walnut Brownie",
       "subtitle": "Rich fudgy brownie with crisp crust and soft heart",
       "category": "desserts",
-      "price": 0.9825,
+      "price": 280,
       "rating": 4.9,
       "reviewsCount": 110,
       "badge": "Fudgy Bake",
@@ -4150,7 +4150,7 @@
       "addons": [
         {
           "name": "Vanilla Ice Cream Scoop",
-          "price": 0.63
+          "price": 180
         }
       ]
     },
@@ -4159,7 +4159,7 @@
       "title": "218. Assorted Pastries & Cupcakes",
       "subtitle": "Freshly baked pastries with daily chef's selection",
       "category": "desserts",
-      "price": 0.8421,
+      "price": 240,
       "rating": 4.88,
       "reviewsCount": 85,
       "badge": "Bakery Treats",
@@ -4191,7 +4191,7 @@
       "title": "220. Chocolate Pops",
       "subtitle": "Bite-sized chocolate-coated cake pops for a sweet finish",
       "category": "desserts",
-      "price": 0.8772,
+      "price": 250,
       "rating": 4.85,
       "reviewsCount": 60,
       "badge": "Sweet Bites",

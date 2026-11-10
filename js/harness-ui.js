@@ -269,7 +269,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (type === 'empty') {
       window.cartManager.clearCart();
-      window.cartManager.setCurrency('USD');
       showToast('Reset state: Cart is now empty', 'info');
     } else if (type === 'single-steak') {
       window.cartManager.clearCart();
@@ -277,27 +276,24 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast('Injected Single Truffle Mushroom Steak with extra sauce', 'success');
     } else if (type === 'near-threshold') {
       window.cartManager.clearCart();
-      // Add Handi ($16.50) + Salsa Steak ($17.99) = $34.49 (51 cents away from $35.00)
+      // Add Handi (Rs. 2,035) + Salsa Steak (Rs. 1,500) = Rs. 3,535 (below the Rs. 9,975 free delivery threshold)
       window.cartManager.addItem('handi-chicken-hari-mirch', 0, [], 'Mild', '', 1);
       window.cartManager.addItem('fire-glazed-mexican-steak', 0, [], 'Normal', '', 1);
-      showToast('Configured cart near free shipping threshold ($34.49 / $35.00)', 'warning');
+      showToast('Configured cart below free delivery threshold (Rs. 3,535 / Rs. 9,975)', 'warning');
     } else if (type === 'vip-feast') {
       window.cartManager.clearCart();
-      window.cartManager.addItem('truffle-mushroom-steak', 1, ['Extra Creamy Truffle Mushroom Sauce', 'Crispy Herb Potato Wedges'], 'Normal', '', 2);
+      window.cartManager.addItem('truffle-mushroom-steak', 1, ['Extra Creamy Truffle Mushroom Sauce', 'Garlic Butter Sautéed Mushrooms'], 'Normal', '', 2);
       window.cartManager.addItem('bbq-malai-boti-platter', 0, [], 'Normal', '', 2);
       window.cartManager.addItem('special-artisan-nans-platter', 0, [], 'Normal', '', 3);
       window.cartManager.addItem('signature-shangrilla-mocktails', 0, [], 'Chilled', '', 4);
-      showToast('Injected VIP Royal Feast (> $100, free shipping unlocked)', 'success');
+      showToast('Injected VIP Royal Feast (free delivery unlocked)', 'success');
     } else if (type === 'promo-percent') {
       window.cartManager.clearCart();
-      window.cartManager.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 2);
+      window.cartManager.addItem('truffle-mushroom-steak', 0, [], 'Normal', '', 3);
       window.cartManager.applyCoupon('SHANGRILLA10');
       showToast('Applied 10% off promo coupon SHANGRILLA10', 'success');
-    } else if (type === 'pkr') {
-      window.cartManager.setCurrency('PKR');
-      showToast('Switched currency to PKR (Rs. 285 / USD)', 'info');
     } else if (type === 'corrupt') {
-      localStorage.setItem('shangrilla_cart_v1', '<<INVALID_MALFORMED_JSON>>');
+      localStorage.setItem('shangrilla_cart_v2', '<<INVALID_MALFORMED_JSON>>');
       showToast('Injected corrupt JSON into localStorage', 'danger');
     }
 
@@ -307,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function refreshStateInspector() {
     if (cartJsonArea) {
-      const rawCart = localStorage.getItem('shangrilla_cart_v1') || '[]';
+      const rawCart = localStorage.getItem('shangrilla_cart_v2') || '[]';
       try {
         cartJsonArea.value = JSON.stringify(JSON.parse(rawCart), null, 2);
       } catch (e) {
@@ -316,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (orderHistoryJsonArea) {
-      const rawOrders = localStorage.getItem('shangrilla_orders_v1') || '[]';
+      const rawOrders = localStorage.getItem('shangrilla_orders_v2') || '[]';
       try {
         orderHistoryJsonArea.value = JSON.stringify(JSON.parse(rawOrders), null, 2);
       } catch (e) {
@@ -494,28 +490,28 @@ document.addEventListener('DOMContentLoaded', () => {
         <div style="border-top:1px dashed rgba(255,255,255,0.1); padding-top:10px; font-size:0.82rem;">
           <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
             <span>1x Truffle Mushroom Steak</span>
-            <span>$18.99</span>
+            <span>Rs. 1,500</span>
           </div>
           <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
             <span>2x Roghani Naans</span>
-            <span>$7.00</span>
+            <span>Rs. 200</span>
           </div>
           <div style="display:flex; justify-content:space-between; margin-bottom:6px; color:var(--h-success);">
             <span>Promo SHANGRILLA10 (10%)</span>
-            <span>-$2.60</span>
+            <span>-Rs. 170</span>
           </div>
           <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
             <span>Tax (5%)</span>
-            <span>$1.17</span>
+            <span>Rs. 77</span>
           </div>
           <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
             <span>Delivery Fee</span>
-            <span>$2.50</span>
+            <span>Rs. 713</span>
           </div>
         </div>
         <div class="receipt-total" style="border-top:1px solid rgba(255,255,255,0.2); margin-top:8px; padding-top:8px; display:flex; justify-content:space-between; font-weight:700;">
           <span>Total Billed:</span>
-          <span>$27.06</span>
+          <span>Rs. 2,320</span>
         </div>
       </div>
     `;
@@ -567,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <button class="h-btn h-btn-danger" onclick="showToast('Payment processing failed. Card declined.', 'danger')">
           <i class="fa-solid fa-triangle-exclamation"></i> Trigger Error Toast
         </button>
-        <button class="h-btn h-btn-secondary" style="color:var(--h-warning); border-color:var(--h-warning);" onclick="showToast('Add $1.50 more for FREE delivery!', 'warning')">
+        <button class="h-btn h-btn-secondary" style="color:var(--h-warning); border-color:var(--h-warning);" onclick="showToast('Add Rs. 425 more for FREE delivery!', 'warning')">
           <i class="fa-solid fa-truck"></i> Trigger Warning Toast
         </button>
         <button class="h-btn h-btn-secondary" style="color:var(--h-info); border-color:var(--h-info);" onclick="showToast('Promo code applied to your order', 'info')">
@@ -682,7 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
       saveCartJsonBtn.addEventListener('click', () => {
         try {
           const parsed = JSON.parse(cartJsonArea.value);
-          localStorage.setItem('shangrilla_cart_v1', JSON.stringify(parsed));
+          localStorage.setItem('shangrilla_cart_v2', JSON.stringify(parsed));
           if (window.cartManager) {
             window.cartManager.cart = parsed;
             window.cartManager.notify();
@@ -697,7 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (clearOrderHistoryBtn) {
       clearOrderHistoryBtn.addEventListener('click', () => {
-        localStorage.removeItem('shangrilla_orders_v1');
+        localStorage.removeItem('shangrilla_orders_v2');
         refreshStateInspector();
         showToast('Cleared order history', 'info');
       });

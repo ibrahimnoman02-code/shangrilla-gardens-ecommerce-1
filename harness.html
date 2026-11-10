@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shangrilla Gardens & BBQ | Test & Development Quality Harness</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
 
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -188,7 +189,7 @@
               <i class="fa-solid fa-fire" style="color:var(--h-primary);"></i>
               <span>Single Sizzler Steak</span>
             </div>
-            <div class="scenario-desc">Adds 1 Truffle Mushroom Chicken Steak ($18.99) with Truffle Sauce addon ($2.25). Subtotal: $21.24. Delivery fee applied.</div>
+            <div class="scenario-desc">Adds 1 Truffle Mushroom Chicken Steak (Rs. 1,500) with Truffle Sauce addon (Rs. 220). Subtotal: Rs. 1,720. Delivery fee applied.</div>
           </div>
           <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('single-steak')">Apply State</button>
         </div>
@@ -198,9 +199,9 @@
           <div>
             <div class="scenario-title">
               <i class="fa-solid fa-truck-fast" style="color:var(--h-warning);"></i>
-              <span>Near Free Shipping ($33.50)</span>
+              <span>Below Free Delivery (Rs. 3,535)</span>
             </div>
-            <div class="scenario-desc">Configures cart to $33.50 subtotal ($1.50 away from free delivery). Tests the free shipping meter and remaining amount notice.</div>
+            <div class="scenario-desc">Configures cart to a Rs. 3,535 subtotal (Rs. 6,440 away from free delivery). Tests the free delivery meter and remaining amount notice.</div>
           </div>
           <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('near-threshold')">Apply State</button>
         </div>
@@ -210,9 +211,9 @@
           <div>
             <div class="scenario-title">
               <i class="fa-solid fa-crown" style="color:var(--h-gold);"></i>
-              <span>VIP Royal Feast ($100+)</span>
+              <span>VIP Royal Feast (Rs. 10,000+)</span>
             </div>
-            <div class="scenario-desc">Populates multiple premium steaks, handi platters, and mocktails. Unlocks free shipping ($0 delivery fee) and high order volume.</div>
+            <div class="scenario-desc">Populates multiple premium steaks, handi platters, and mocktails. Unlocks free delivery (Rs. 0 delivery fee) and high order volume.</div>
           </div>
           <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('vip-feast')">Apply State</button>
         </div>
@@ -230,18 +231,6 @@
         </div>
 
         <!-- Preset 6 -->
-        <div class="scenario-card">
-          <div>
-            <div class="scenario-title">
-              <i class="fa-solid fa-money-bill-transfer" style="color:#a855f7;"></i>
-              <span>Currency Toggle: PKR (Rs.)</span>
-            </div>
-            <div class="scenario-desc">Sets active store currency to PKR (Rs.) with 285x conversion rate and rounded integer formatting.</div>
-          </div>
-          <button class="h-btn h-btn-secondary" onclick="window.applyHarnessScenario('pkr')">Switch to PKR</button>
-        </div>
-
-        <!-- Preset 7 -->
         <div class="scenario-card">
           <div>
             <div class="scenario-title">

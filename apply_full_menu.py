@@ -48,9 +48,9 @@ reviews = [
 
 # Coupons
 coupons = [
-    { "code": "SHANGRILLA10", "type": "percent", "value": 10, "minOrder": 15, "desc": "10% off your entire order" },
-    { "code": "ROYALSTEAK", "type": "fixed", "value": 5.0, "minOrder": 25, "desc": "$5 off premium sizzlers" },
-    { "code": "FREESHIP", "type": "shipping", "value": 0, "minOrder": 20, "desc": "Free priority delivery" }
+    { "code": "SHANGRILLA10", "type": "percent", "value": 10, "minOrder": 4275, "desc": "10% off your entire order" },
+    { "code": "ROYALSTEAK", "type": "fixed", "value": 1425, "minOrder": 7125, "desc": "Rs. 1,425 off premium sizzlers" },
+    { "code": "FREESHIP", "type": "shipping", "value": 0, "minOrder": 5700, "desc": "Free priority delivery" }
 ]
 
 restaurant_data = {
@@ -63,24 +63,30 @@ restaurant_data = {
     "email": "orders@shangrillagardens.com",
     "address": "Club Road, Shangrilla Garden & BBQ",
     "openingHours": "Mon - Sun: 12:00 PM - 01:00 AM",
-    "deliveryFee": 2.50,
-    "freeDeliveryThreshold": 35.00,
+    # All amounts are in Pakistani Rupees (PKR)
+    "deliveryFee": 713,
+    "freeDeliveryThreshold": 9975,
     "taxRate": 0.05,
-    "currency": {
-        "symbol": "$",
-        "code": "USD",
-        "rate": 1,
-        "altSymbol": "Rs.",
-        "altCode": "PKR",
-        "altRate": 285
-    },
+    "currency": {"symbol": "Rs.", "code": "PKR"},
     "coupons": coupons,
     "categories": categories,
     "items": items,
     "reviews": reviews
 }
 
-js_content = f"// Menu & Restaurant Data for Shangrilla Garden & BBQ\nconst RESTAURANT_DATA = {json.dumps(restaurant_data, indent=2, ensure_ascii=False)};\n"
+# Compact output (one object per line) keeps js/data.js small for faster page loads
+def _compact(obj):
+    return json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
+
+_lines = []
+for _key, _val in restaurant_data.items():
+    if isinstance(_val, list):
+        _rows = ',\n'.join('    ' + _compact(_x) for _x in _val)
+        _lines.append(f'  {json.dumps(_key)}: [\n{_rows}\n  ]')
+    else:
+        _lines.append(f'  {json.dumps(_key)}: {_compact(_val)}')
+
+js_content = "// Menu & Restaurant Data for Shangrilla Garden & BBQ (all prices in PKR)\nconst RESTAURANT_DATA = {\n" + ',\n'.join(_lines) + "\n};\n"
 
 with open('js/data.js', 'w', encoding='utf-8') as f:
     f.write(js_content)

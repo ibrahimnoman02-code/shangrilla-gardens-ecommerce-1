@@ -39,8 +39,8 @@
 * **Heritage Line:** "Royal Flavors, Garden Fresh Dining"
 
 ### Logo System
-* **Logo Symbol:** 44×44px rounded square (`border-radius: 12px`) with gold gradient background
-* **Logo Monogram:** Letter "S" in `Cinzel` font, weight 800, size 1.7rem, color `#12100e`
+* **Logo Mark:** Gold line-art "S" monogram, transparent PNG `assets/images/logo.png` (160×160), shown at 40×40px (36×36px below 400px width) with no background box
+* **Favicons:** `assets/images/favicon-32.png` (browser tab) and `assets/images/apple-touch-icon.png` (180×180 on `#0d0c0b`, iOS home screen)
 * **Logo Text Stack:**
   - Brand Name: `Cinzel`, 1.15rem, weight 700, letter-spacing 0.04em
   - "SHANGRILLA" in `--text-main` (#f8fafc), "GARDEN & BBQ" in `--primary` (#f59e0b)
@@ -56,7 +56,7 @@
   - Dinner: 7:00 PM – 1:00 AM
 
 ### Social Media Channels
-* WhatsApp, Facebook, Instagram, TikTok, YouTube
+* WhatsApp, Facebook (`facebook.com/shangrillaBBQOfficial`), Instagram (`instagram.com/shangrillagardens`)
 
 ---
 
@@ -84,7 +84,7 @@
 | Token | Value | Usage |
 |:---|:---|:---|
 | `--gold-accent` | `#fbbf24` | Prices, stars, highlight text |
-| `--gold-gradient` | `linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%)` | Buttons, badges, logo |
+| `--gold-gradient` | `linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%)` | Buttons, badges |
 | `--gold-glow-gradient` | `linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)` | Hover state gradient, hero text |
 
 ### Text Tokens
@@ -334,7 +334,7 @@ body {
 * "Order Cart" button with live badge counter
 
 ### Footer Navigation
-**Column 1:** Brand info + social icons (WhatsApp, Facebook, Instagram, TikTok, YouTube)
+**Column 1:** Brand info + social icons (WhatsApp, Facebook, Instagram)
 **Column 2:** Culinary Menu links → `#menuSection`
 **Column 3:** Ordering & Service links
 **Column 4:** Visit & Contact (address, hours, phones, email)
@@ -907,7 +907,7 @@ All images stored in `assets/images/`:
 `fa-crown`, `fa-fire-burner`, `fa-bread-slice`, `fa-truck-fast`, `fa-utensils`, `fa-calendar-check`, `fa-bag-shopping`, `fa-share-nodes`, `fa-book-open`, `fa-magnifying-glass`, `fa-xmark`, `fa-star`, `fa-plus`, `fa-sliders`, `fa-fire`, `fa-motorcycle`, `fa-champagne-glasses`, `fa-phone-volume`, `fa-clock`, `fa-location-dot`, `fa-circle-check`, `fa-money-bill-wave`, `fa-credit-card`, `fa-mobile-screen-button`, `fa-check`, `fa-arrow-right`, `fa-print`, `fa-file-invoice`, `fa-bell-concierge`, `fa-leaf`, `fa-gem`, `fa-bowl-food`, `fa-temperature-arrow-up`, `fa-link`, `fa-envelope`, `fa-pepper-hot`, `fa-plate-wheat`, `fa-trash-can`, `fa-tag`, `fa-circle-exclamation`, `fa-play`, `fa-spinner`, `fa-code`, `fa-file-arrow-down`, `fa-flask-vial`, `fa-microchip`, `fa-arrow-up-right-from-square`, `fa-cart-shopping`, `fa-ticket`, `fa-money-bill-transfer`, `fa-shield-virus`, `fa-clock-rotate-left`, `fa-circle-dot`, `fa-circle-xmark`, `fa-receipt`, `fa-timeline`, `fa-bell`, `fa-cubes`, `fa-network-wired`, `fa-mobile-screen`, `fa-tablet-screen-button`, `fa-desktop`, `fa-triangle-exclamation`, `fa-circle-info`, `fa-vial`, `fa-percent`
 
 ### Icon Usage (Font Awesome Brands)
-`fa-whatsapp`, `fa-facebook-f`, `fa-instagram`, `fa-tiktok`, `fa-youtube`, `fa-x-twitter`, `fa-linkedin-in`
+`fa-whatsapp`, `fa-facebook-f`, `fa-instagram`, `fa-x-twitter`, `fa-linkedin-in`
 
 ---
 

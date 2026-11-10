@@ -21,15 +21,9 @@ categories = [
     {"id": "desserts", "name": "Desserts & Bakery", "icon": "fa-cake-candles"}
 ]
 
-RATE = 285.0
-
-def to_usd(pkr):
-    # Round to 2 decimal places such that round(usd * 285) == pkr if possible, else high precision
-    val = round(pkr / RATE, 2)
-    if round(val * RATE) == pkr:
-        return val
-    # If round 2 doesn't match exactly, find closest 4-dec or exact float
-    return round(pkr / RATE, 4)
+def to_pkr(amount):
+    # All menu prices are stored natively in Pakistani Rupees (whole numbers).
+    return int(round(amount))
 
 items = [
     # -------------------------------------------------------------
@@ -40,7 +34,7 @@ items = [
         "title": "S1 (Chicken Deal For 5)",
         "subtitle": "A Hearty Family-Style Chicken Feast",
         "category": "deals",
-        "price": to_usd(6650),
+        "price": to_pkr(6650),
         "rating": 4.95,
         "reviewsCount": 89,
         "badge": "Family Feast",
@@ -53,9 +47,9 @@ items = [
         "prepTime": "30-35 mins",
         "portions": [{"name": "Standard Deal (Serves 5)", "priceDelta": 0}],
         "addons": [
-            {"name": "Extra Assorted Bread Basket", "price": to_usd(499)},
-            {"name": "Extra 1 Litre Cold Drink", "price": to_usd(220)},
-            {"name": "Upgrade to Dessert Platter", "price": to_usd(780)}
+            {"name": "Extra Assorted Bread Basket", "price": to_pkr(499)},
+            {"name": "Extra 1 Litre Cold Drink", "price": to_pkr(220)},
+            {"name": "Upgrade to Dessert Platter", "price": to_pkr(780)}
         ]
     },
     {
@@ -63,7 +57,7 @@ items = [
         "title": "S2 (Mutton Deal for 5)",
         "subtitle": "A Rich Royal Desi Spread",
         "category": "deals",
-        "price": to_usd(8500),
+        "price": to_pkr(8500),
         "rating": 5.0,
         "reviewsCount": 112,
         "badge": "Royal Special",
@@ -76,8 +70,8 @@ items = [
         "prepTime": "35-40 mins",
         "portions": [{"name": "Grand Mutton Deal (Serves 5)", "priceDelta": 0}],
         "addons": [
-            {"name": "Extra Roghni Naans (2 Pcs)", "price": to_usd(200)},
-            {"name": "Extra Mutton Seekh Royale (4 Pcs)", "price": to_usd(2150)}
+            {"name": "Extra Roghni Naans (2 Pcs)", "price": to_pkr(200)},
+            {"name": "Extra Mutton Seekh Royale (4 Pcs)", "price": to_pkr(2150)}
         ]
     },
     {
@@ -85,7 +79,7 @@ items = [
         "title": "S3 (BBQ Feast Deal)",
         "subtitle": "The Complete Charcoal Grill Experience",
         "category": "deals",
-        "price": to_usd(5000),
+        "price": to_pkr(5000),
         "rating": 4.9,
         "reviewsCount": 78,
         "badge": "BBQ Masterpiece",
@@ -98,8 +92,8 @@ items = [
         "prepTime": "25-30 mins",
         "portions": [{"name": "Feast for 3 Guests", "priceDelta": 0}],
         "addons": [
-            {"name": "Extra Garlic Naan", "price": to_usd(120)},
-            {"name": "Mint Lemonade Pair", "price": to_usd(550)}
+            {"name": "Extra Garlic Naan", "price": to_pkr(120)},
+            {"name": "Mint Lemonade Pair", "price": to_pkr(550)}
         ]
     },
     {
@@ -107,7 +101,7 @@ items = [
         "title": "S4 (Pizza Meal Deal)",
         "subtitle": "Modern Comfort Combo",
         "category": "deals",
-        "price": to_usd(2900),
+        "price": to_pkr(2900),
         "rating": 4.85,
         "reviewsCount": 64,
         "badge": "Pizza Combo",
@@ -120,8 +114,8 @@ items = [
         "prepTime": "20-25 mins",
         "portions": [{"name": "Combo with 13\" Large Pizza", "priceDelta": 0}],
         "addons": [
-            {"name": "Extra Cheese Melt Crown", "price": to_usd(250)},
-            {"name": "Dip Sauces Trio", "price": to_usd(150)}
+            {"name": "Extra Cheese Melt Crown", "price": to_pkr(250)},
+            {"name": "Dip Sauces Trio", "price": to_pkr(150)}
         ]
     },
     {
@@ -129,7 +123,7 @@ items = [
         "title": "Two - Person Curated Deal",
         "subtitle": "A Complete Intimate Dining Experience",
         "category": "deals",
-        "price": to_usd(3100),
+        "price": to_pkr(3100),
         "rating": 4.9,
         "reviewsCount": 95,
         "badge": "Duo Special",
@@ -141,14 +135,14 @@ items = [
         "spiceLevel": "Medium",
         "prepTime": "20-25 mins",
         "portions": [{"name": "Duo Set (Serves 2)", "priceDelta": 0}],
-        "addons": [{"name": "Extra Roghni Naan", "price": to_usd(100)}]
+        "addons": [{"name": "Extra Roghni Naan", "price": to_pkr(100)}]
     },
     {
         "id": "chefs-bread-basket",
         "title": "Chef's Bread Basket",
         "subtitle": "Tandoor Artisan Bread Assortment",
         "category": "naans",
-        "price": to_usd(499),
+        "price": to_pkr(499),
         "rating": 4.9,
         "reviewsCount": 140,
         "badge": "Tandoor Bake",
@@ -161,8 +155,8 @@ items = [
         "prepTime": "10-12 mins",
         "portions": [{"name": "Basket (4 Artisan Breads)", "priceDelta": 0}],
         "addons": [
-            {"name": "Extra Desi Makhan Butter Glaze", "price": to_usd(80)},
-            {"name": "Mint Raita Bowl", "price": to_usd(170)}
+            {"name": "Extra Desi Makhan Butter Glaze", "price": to_pkr(80)},
+            {"name": "Mint Raita Bowl", "price": to_pkr(170)}
         ]
     },
     {
@@ -170,7 +164,7 @@ items = [
         "title": "Royal Dessert Platter",
         "subtitle": "Indulgent Sweet Finale from Our Bakery",
         "category": "desserts",
-        "price": to_usd(780),
+        "price": to_pkr(780),
         "rating": 4.95,
         "reviewsCount": 105,
         "badge": "Chef Sweet Choice",
@@ -182,7 +176,7 @@ items = [
         "spiceLevel": "Sweet & Rich",
         "prepTime": "10-15 mins",
         "portions": [{"name": "Grand Platter (10 Sweet Bites)", "priceDelta": 0}],
-        "addons": [{"name": "Single Scoop Vanilla Ice Cream", "price": to_usd(180)}]
+        "addons": [{"name": "Single Scoop Vanilla Ice Cream", "price": to_pkr(180)}]
     },
 
     # -------------------------------------------------------------
@@ -193,7 +187,7 @@ items = [
         "title": "Classic Hot & Sour Soup",
         "subtitle": "Served hot, for the cold evenings",
         "category": "soups",
-        "price": to_usd(1650),
+        "price": to_pkr(1650),
         "rating": 4.9,
         "reviewsCount": 118,
         "badge": "Winter Star",
@@ -206,13 +200,13 @@ items = [
         "prepTime": "12-15 mins",
         "portions": [
             {"name": "Full Bowl (Serves 2-3)", "priceDelta": 0},
-            {"name": "Half Bowl (Single Serving)", "priceDelta": to_usd(850) - to_usd(1650)}
+            {"name": "Half Bowl (Single Serving)", "priceDelta": to_pkr(850) - to_pkr(1650)}
         ],
         "addons": [
-            {"name": "Crispy Fried Wonton Crackers", "price": to_usd(150)},
-            {"name": "Extra Shredded Chicken & Egg Drop", "price": to_usd(250)},
-            {"name": "Spicy Szechuan Chili Oil Pot", "price": to_usd(120)},
-            {"name": "Extra Chili Vinegar & Dark Soy Dips", "price": to_usd(100)}
+            {"name": "Crispy Fried Wonton Crackers", "price": to_pkr(150)},
+            {"name": "Extra Shredded Chicken & Egg Drop", "price": to_pkr(250)},
+            {"name": "Spicy Szechuan Chili Oil Pot", "price": to_pkr(120)},
+            {"name": "Extra Chili Vinegar & Dark Soy Dips", "price": to_pkr(100)}
         ]
     },
     {
@@ -220,7 +214,7 @@ items = [
         "title": "Golden Corn Soup",
         "subtitle": "Sweet golden kernels in velvet chicken broth",
         "category": "soups",
-        "price": to_usd(1530),
+        "price": to_pkr(1530),
         "rating": 4.85,
         "reviewsCount": 68,
         "badge": "Comfort Classic",
@@ -233,16 +227,16 @@ items = [
         "prepTime": "12-15 mins",
         "portions": [
             {"name": "Full Bowl (Serves 2-3)", "priceDelta": 0},
-            {"name": "Half Bowl (Single Serving)", "priceDelta": to_usd(820) - to_usd(1530)}
+            {"name": "Half Bowl (Single Serving)", "priceDelta": to_pkr(820) - to_pkr(1530)}
         ],
-        "addons": [{"name": "Crispy Crackers & Sauces", "price": to_usd(150)}]
+        "addons": [{"name": "Crispy Crackers & Sauces", "price": to_pkr(150)}]
     },
     {
         "id": "thai-lemongrass-soup",
         "title": "Thai Lemongrass Soup",
         "subtitle": "Zesty, fragrant & herbal Siamese broth",
         "category": "soups",
-        "price": to_usd(1540),
+        "price": to_pkr(1540),
         "rating": 4.9,
         "reviewsCount": 54,
         "badge": "Herbal Specialty",
@@ -255,16 +249,16 @@ items = [
         "prepTime": "12-15 mins",
         "portions": [
             {"name": "Full Bowl (Serves 2-3)", "priceDelta": 0},
-            {"name": "Half Bowl (Single Serving)", "priceDelta": to_usd(770) - to_usd(1540)}
+            {"name": "Half Bowl (Single Serving)", "priceDelta": to_pkr(770) - to_pkr(1540)}
         ],
-        "addons": [{"name": "Extra Lime & Chili Condiments", "price": to_usd(100)}]
+        "addons": [{"name": "Extra Lime & Chili Condiments", "price": to_pkr(100)}]
     },
     {
         "id": "crispy-french-fries",
         "title": "Crispy French Fries / House Fries",
         "subtitle": "Golden, salted and crunchy",
         "category": "soups",
-        "price": to_usd(520),
+        "price": to_pkr(520),
         "rating": 4.8,
         "reviewsCount": 85,
         "badge": "Popular Snack",
@@ -276,14 +270,14 @@ items = [
         "spiceLevel": "Mild",
         "prepTime": "10-12 mins",
         "portions": [{"name": "Standard Basket", "priceDelta": 0}],
-        "addons": [{"name": "Melted Cheddar Cheese Drizzle", "price": to_usd(180)}]
+        "addons": [{"name": "Melted Cheddar Cheese Drizzle", "price": to_pkr(180)}]
     },
     {
         "id": "grilled-chicken-sandwich-melts",
         "title": "Grilled Chicken Sandwich Melts",
         "subtitle": "Toasted pan-bread with melted cheese",
         "category": "soups",
-        "price": to_usd(850),
+        "price": to_pkr(850),
         "rating": 4.85,
         "reviewsCount": 62,
         "badge": "Cafe Special",
@@ -295,14 +289,14 @@ items = [
         "spiceLevel": "Mild-Medium",
         "prepTime": "15-18 mins",
         "portions": [{"name": "Full Sandwich with Fries", "priceDelta": 0}],
-        "addons": [{"name": "Extra Cheese Layer", "price": to_usd(120)}]
+        "addons": [{"name": "Extra Cheese Layer", "price": to_pkr(120)}]
     },
     {
         "id": "classic-chicken-club-sandwich",
         "title": "Classic Chicken Club Sandwich",
         "subtitle": "Triple-decker stacked with egg, chicken & salad",
         "category": "soups",
-        "price": to_usd(950),
+        "price": to_pkr(950),
         "rating": 4.9,
         "reviewsCount": 88,
         "badge": "All-Time Classic",
@@ -314,14 +308,14 @@ items = [
         "spiceLevel": "Mild",
         "prepTime": "15-20 mins",
         "portions": [{"name": "Full Triple Decker with Fries", "priceDelta": 0}],
-        "addons": [{"name": "Extra French Fries Portion", "price": to_usd(200)}]
+        "addons": [{"name": "Extra French Fries Portion", "price": to_pkr(200)}]
     },
     {
         "id": "crispy-zinger-burger",
         "title": "Crispy Zinger Burger",
         "subtitle": "Ultra-crunchy fried chicken fillet in sesame brioche",
         "category": "soups",
-        "price": to_usd(700),
+        "price": to_pkr(700),
         "rating": 4.88,
         "reviewsCount": 110,
         "badge": "Crispy Crunch",
@@ -333,14 +327,14 @@ items = [
         "spiceLevel": "Medium Spicy",
         "prepTime": "15 mins",
         "portions": [{"name": "Single Burger with Fries", "priceDelta": 0}],
-        "addons": [{"name": "Cheese Slice", "price": to_usd(100)}]
+        "addons": [{"name": "Cheese Slice", "price": to_pkr(100)}]
     },
     {
         "id": "tropical-fruit-salad",
         "title": "Tropical Fruit Salad",
         "subtitle": "Fresh seasonal orchard fruits in light honey cream",
         "category": "soups",
-        "price": to_usd(770),
+        "price": to_pkr(770),
         "rating": 4.8,
         "reviewsCount": 42,
         "badge": "Fresh Healthy",
@@ -353,7 +347,7 @@ items = [
         "prepTime": "8-10 mins",
         "portions": [
             {"name": "Bowl (Single / Duo)", "priceDelta": 0},
-            {"name": "Grand Fruit Plate", "priceDelta": to_usd(1100) - to_usd(770)}
+            {"name": "Grand Fruit Plate", "priceDelta": to_pkr(1100) - to_pkr(770)}
         ],
         "addons": []
     },
@@ -362,7 +356,7 @@ items = [
         "title": "Fresh Green Salad",
         "subtitle": "Crisp farm cucumbers, tomatoes, radishes & onions",
         "category": "soups",
-        "price": to_usd(170),
+        "price": to_pkr(170),
         "rating": 4.75,
         "reviewsCount": 60,
         "badge": "Garden Fresh",
@@ -381,7 +375,7 @@ items = [
         "title": "Traditional Mint & Zeera Raita",
         "subtitle": "Whipped yogurt with roasted cumin and crushed mint",
         "category": "soups",
-        "price": to_usd(170),
+        "price": to_pkr(170),
         "rating": 4.85,
         "reviewsCount": 90,
         "badge": "Desi Pairing",
@@ -394,7 +388,7 @@ items = [
         "prepTime": "5 mins",
         "portions": [
             {"name": "Traditional Raita Bowl", "priceDelta": 0},
-            {"name": "Creamy Nestlé Premium Yogurt Raita", "priceDelta": to_usd(220) - to_usd(170)}
+            {"name": "Creamy Nestlé Premium Yogurt Raita", "priceDelta": to_pkr(220) - to_pkr(170)}
         ],
         "addons": []
     },
@@ -403,7 +397,7 @@ items = [
         "title": "Crispy Chicken Wings (8 Pcs)",
         "subtitle": "Crunchy golden fried wings with dipping sauce",
         "category": "soups",
-        "price": to_usd(800),
+        "price": to_pkr(800),
         "rating": 4.9,
         "reviewsCount": 72,
         "badge": "Finger Food",
@@ -415,7 +409,7 @@ items = [
         "spiceLevel": "Medium",
         "prepTime": "15 mins",
         "portions": [{"name": "8 Pieces Basket", "priceDelta": 0}],
-        "addons": [{"name": "Honey Chili Glaze Upgrade", "price": to_usd(150)}]
+        "addons": [{"name": "Honey Chili Glaze Upgrade", "price": to_pkr(150)}]
     },
 
     # -------------------------------------------------------------
@@ -426,7 +420,7 @@ items = [
         "title": "19. Chef's Special Chicken Tikka (Breast Fillet)",
         "subtitle": "Tender chicken breast in tikka spices, flame-grilled",
         "category": "bbq",
-        "price": to_usd(500),
+        "price": to_pkr(500),
         "rating": 4.9,
         "reviewsCount": 130,
         "badge": "Charcoal Favorite",
@@ -438,14 +432,14 @@ items = [
         "spiceLevel": "Spicy (2/3)",
         "prepTime": "20-25 mins",
         "portions": [{"name": "Breast Fillet Piece", "priceDelta": 0}],
-        "addons": [{"name": "Hot Roghni Naan", "price": to_usd(100)}]
+        "addons": [{"name": "Hot Roghni Naan", "price": to_pkr(100)}]
     },
     {
         "id": "smoked-chicken-leg-tikka",
         "title": "20. Smoked Chicken Leg Tikka",
         "subtitle": "Juicy leg piece infused with herbs and slow-grilled",
         "category": "bbq",
-        "price": to_usd(500),
+        "price": to_pkr(500),
         "rating": 4.9,
         "reviewsCount": 125,
         "badge": "Smoky Classic",
@@ -457,14 +451,14 @@ items = [
         "spiceLevel": "Spicy (2/3)",
         "prepTime": "20-25 mins",
         "portions": [{"name": "Leg Quarter Piece", "priceDelta": 0}],
-        "addons": [{"name": "Garlic Naan", "price": to_usd(120)}]
+        "addons": [{"name": "Garlic Naan", "price": to_pkr(120)}]
     },
     {
         "id": "royal-chicken-boti-skewers",
         "title": "21. Royal Chicken Boti Skewers (12 Pcs)",
         "subtitle": "Charred on bone with aromatic spices",
         "category": "bbq",
-        "price": to_usd(1600),
+        "price": to_pkr(1600),
         "rating": 4.9,
         "reviewsCount": 140,
         "badge": "House Star",
@@ -476,14 +470,14 @@ items = [
         "spiceLevel": "Medium Spicy",
         "prepTime": "20-25 mins",
         "portions": [{"name": "Full Skewer Platter (12 Pcs)", "priceDelta": 0}],
-        "addons": [{"name": "Mint Raita", "price": to_usd(170)}]
+        "addons": [{"name": "Mint Raita", "price": to_pkr(170)}]
     },
     {
         "id": "signature-chicken-seekh-4pcs",
         "title": "22. Signature Chicken Seekh Kebab (4 Pcs)",
         "subtitle": "Minced chicken with herbs & charcoal flame-grilled",
         "category": "bbq",
-        "price": to_usd(1200),
+        "price": to_pkr(1200),
         "rating": 4.88,
         "reviewsCount": 98,
         "badge": "Seekh Favorite",
@@ -495,14 +489,14 @@ items = [
         "spiceLevel": "Medium",
         "prepTime": "20 mins",
         "portions": [{"name": "Platter of 4 Seekh Kebabs", "priceDelta": 0}],
-        "addons": [{"name": "Tandoori Paratha", "price": to_usd(120)}]
+        "addons": [{"name": "Tandoori Paratha", "price": to_pkr(120)}]
     },
     {
         "id": "kasturi-murg-boti-10pcs",
         "title": "24. Kasturi Murg Boti (10 Pcs)",
         "subtitle": "Infused with fragrant fenugreek & rich cream",
         "category": "bbq",
-        "price": to_usd(2000),
+        "price": to_pkr(2000),
         "rating": 4.95,
         "reviewsCount": 85,
         "badge": "Mughlai Deluxe",
@@ -521,7 +515,7 @@ items = [
         "title": "26. Murg Malai Delight (12 Pcs)",
         "subtitle": "Cream, cheese & subtle spices with melt-in-mouth texture",
         "category": "bbq",
-        "price": to_usd(1800),
+        "price": to_pkr(1800),
         "rating": 4.95,
         "reviewsCount": 160,
         "badge": "Bestseller",
@@ -533,14 +527,14 @@ items = [
         "spiceLevel": "Mild",
         "prepTime": "20-25 mins",
         "portions": [{"name": "12 Pieces Boti Platter", "priceDelta": 0}],
-        "addons": [{"name": "Extra Garlic Butter Glaze", "price": to_usd(90)}]
+        "addons": [{"name": "Extra Garlic Butter Glaze", "price": to_pkr(90)}]
     },
     {
         "id": "velvet-makhmali-kabab-12pcs",
         "title": "27. Velvet Makhmali Kabab (12 Pcs)",
         "subtitle": "Buttery soft kababs glazed with cream and delicate spices",
         "category": "bbq",
-        "price": to_usd(2220),
+        "price": to_pkr(2220),
         "rating": 4.95,
         "reviewsCount": 75,
         "badge": "Royal Heritage",
@@ -559,7 +553,7 @@ items = [
         "title": "28. Kalmi Drumettes Mughlai Style (4 Pcs)",
         "subtitle": "Juicy chicken drumettes in yogurt-nut paste",
         "category": "bbq",
-        "price": to_usd(1330),
+        "price": to_pkr(1330),
         "rating": 4.88,
         "reviewsCount": 65,
         "badge": "Mughlai Roast",
@@ -578,7 +572,7 @@ items = [
         "title": "29. Heritage Mutton Tikka (16 Pcs)",
         "subtitle": "Prime mutton cubes charred over open flame with masala",
         "category": "bbq",
-        "price": to_usd(3000),
+        "price": to_pkr(3000),
         "rating": 4.98,
         "reviewsCount": 115,
         "badge": "Mutton Luxury",
@@ -590,14 +584,14 @@ items = [
         "spiceLevel": "Spicy & Smoky (2/3)",
         "prepTime": "30 mins",
         "portions": [{"name": "16 Pieces Mutton Platter", "priceDelta": 0}],
-        "addons": [{"name": "Traditional Roghni Naan", "price": to_usd(100)}]
+        "addons": [{"name": "Traditional Roghni Naan", "price": to_pkr(100)}]
     },
     {
         "id": "mutton-seekh-royale-4pcs",
         "title": "30. Mutton Seekh Royale (4 Pcs)",
         "subtitle": "Hand-minced mutton with coriander, mint & flame-grilled",
         "category": "bbq",
-        "price": to_usd(2150),
+        "price": to_pkr(2150),
         "rating": 4.95,
         "reviewsCount": 94,
         "badge": "Chef Choice",
@@ -616,7 +610,7 @@ items = [
         "title": "31. Smoky Beef Seekh (4 Pcs)",
         "subtitle": "Succulent minced beef slow-roasted for smoky aroma",
         "category": "bbq",
-        "price": to_usd(1000),
+        "price": to_pkr(1000),
         "rating": 4.85,
         "reviewsCount": 82,
         "badge": "Smoky Beef",
@@ -635,7 +629,7 @@ items = [
         "title": "33. Peshawari Chappal Kabab (2 Pcs)",
         "subtitle": "Pashtun classic with coarse-ground beef & green chili",
         "category": "bbq",
-        "price": to_usd(1100),
+        "price": to_pkr(1100),
         "rating": 4.9,
         "reviewsCount": 96,
         "badge": "Peshawari Classic",
@@ -654,7 +648,7 @@ items = [
         "title": "34. Charred Mutton Chops (4 Pcs)",
         "subtitle": "French-cut mutton ribs marinated in herbs, flame-kissed",
         "category": "bbq",
-        "price": to_usd(2560),
+        "price": to_pkr(2560),
         "rating": 5.0,
         "reviewsCount": 88,
         "badge": "Signature Ribs",
@@ -673,7 +667,7 @@ items = [
         "title": "35. Behari Murg Boti (12 Pcs)",
         "subtitle": "Boneless chicken in smoky mustard-based Behari masala",
         "category": "bbq",
-        "price": to_usd(1950),
+        "price": to_pkr(1950),
         "rating": 4.9,
         "reviewsCount": 70,
         "badge": "Behari Special",
@@ -692,7 +686,7 @@ items = [
         "title": "36. White Chicken Supreme (Breast)",
         "subtitle": "Creamy yogurt-based tikka, mild and elegant",
         "category": "bbq",
-        "price": to_usd(600),
+        "price": to_pkr(600),
         "rating": 4.88,
         "reviewsCount": 65,
         "badge": "Mild Elegant",
@@ -711,7 +705,7 @@ items = [
         "title": "37. Creamy White Chicken Leg Tikka",
         "subtitle": "Subtly spiced white marinade, charcoal-grilled to tenderness",
         "category": "bbq",
-        "price": to_usd(600),
+        "price": to_pkr(600),
         "rating": 4.88,
         "reviewsCount": 68,
         "badge": "Mild & Juicy",
@@ -730,7 +724,7 @@ items = [
         "title": "38. Lebanese Grilled Kabab (Cheese Stuffed)",
         "subtitle": "Infused with garlic, lemon & olive oil, stuffed with melted cheese",
         "category": "bbq",
-        "price": to_usd(2500),
+        "price": to_pkr(2500),
         "rating": 4.95,
         "reviewsCount": 110,
         "badge": "Cheese Stuffed",
@@ -743,7 +737,7 @@ items = [
         "prepTime": "25 mins",
         "portions": [
             {"name": "6 Pieces Grand Platter", "priceDelta": 0},
-            {"name": "3 Pieces Portion", "priceDelta": to_usd(1600) - to_usd(2500)}
+            {"name": "3 Pieces Portion", "priceDelta": to_pkr(1600) - to_pkr(2500)}
         ],
         "addons": []
     },
@@ -752,7 +746,7 @@ items = [
         "title": "40. Sheesh Taouk Skewers (12 Pcs)",
         "subtitle": "Chicken cubes in yogurt, paprika & lemon zest",
         "category": "bbq",
-        "price": to_usd(1900),
+        "price": to_pkr(1900),
         "rating": 4.9,
         "reviewsCount": 78,
         "badge": "Mediterranean",
@@ -771,7 +765,7 @@ items = [
         "title": "41. Haryali Murg Tikka (12 Pcs)",
         "subtitle": "Chicken in coriander-mint paste, grilled over embers",
         "category": "bbq",
-        "price": to_usd(2000),
+        "price": to_pkr(2000),
         "rating": 4.9,
         "reviewsCount": 84,
         "badge": "Herb Garden",
@@ -790,7 +784,7 @@ items = [
         "title": "Silken Reshmi Kabab (4 Pcs)",
         "subtitle": "Boneless chicken in cream, cheese & subtle spices",
         "category": "bbq",
-        "price": to_usd(1800),
+        "price": to_pkr(1800),
         "rating": 4.92,
         "reviewsCount": 92,
         "badge": "Silken Texture",
@@ -809,7 +803,7 @@ items = [
         "title": "Royal Chicken Malai Boti & Seekh Kebab",
         "subtitle": "Melt-in-mouth charcoal grilled perfection",
         "category": "bbq",
-        "price": to_usd(1950),
+        "price": to_pkr(1950),
         "rating": 4.95,
         "reviewsCount": 167,
         "badge": "BBQ Masterpiece",
@@ -822,9 +816,9 @@ items = [
         "prepTime": "25-30 mins",
         "portions": [
             {"name": "Regular Platter (8 Boti + 2 Seekh)", "priceDelta": 0},
-            {"name": "Jumbo BBQ Platter (16 Boti + 4 Seekh)", "priceDelta": to_usd(1600)}
+            {"name": "Jumbo BBQ Platter (16 Boti + 4 Seekh)", "priceDelta": to_pkr(1600)}
         ],
-        "addons": [{"name": "Garlic Butter Naan", "price": to_usd(120)}]
+        "addons": [{"name": "Garlic Butter Naan", "price": to_pkr(120)}]
     },
 
     # -------------------------------------------------------------
@@ -835,7 +829,7 @@ items = [
         "title": "48. Tuscan Herbs Chicken Steak",
         "subtitle": "Italian herb butter glaze with subtle spice notes",
         "category": "steaks",
-        "price": to_usd(1500),
+        "price": to_pkr(1500),
         "rating": 4.88,
         "reviewsCount": 85,
         "badge": "Italian Sizzler",
@@ -847,14 +841,14 @@ items = [
         "spiceLevel": "Mild to Aromatic",
         "prepTime": "20-25 mins",
         "portions": [{"name": "Single Fillet Sizzler", "priceDelta": 0}],
-        "addons": [{"name": "Extra Herb Garlic Butter Sauce", "price": to_usd(200)}]
+        "addons": [{"name": "Extra Herb Garlic Butter Sauce", "price": to_pkr(200)}]
     },
     {
         "id": "mexican-chipotle-chicken-steak",
         "title": "49. Mexican Chipotle Chicken Steak",
         "subtitle": "Smoky chicken infused with chipotle and fresh lime",
         "category": "steaks",
-        "price": to_usd(1500),
+        "price": to_pkr(1500),
         "rating": 4.9,
         "reviewsCount": 92,
         "badge": "Zesty Heat",
@@ -866,14 +860,14 @@ items = [
         "spiceLevel": "Spicy (2/3)",
         "prepTime": "20-25 mins",
         "portions": [{"name": "Single Fillet Sizzler", "priceDelta": 0}],
-        "addons": [{"name": "Extra Chipotle Sauce", "price": to_usd(200)}]
+        "addons": [{"name": "Extra Chipotle Sauce", "price": to_pkr(200)}]
     },
     {
         "id": "truffle-mushroom-steak",
         "title": "50. Truffle Mushroom Chicken Steak",
         "subtitle": "Creamy mushroom sauce with a hint of black truffle",
         "category": "steaks",
-        "price": to_usd(1500),
+        "price": to_pkr(1500),
         "rating": 4.95,
         "reviewsCount": 142,
         "badge": "Signature Star",
@@ -886,11 +880,11 @@ items = [
         "prepTime": "20-25 mins",
         "portions": [
             {"name": "Single Fillet Sizzler", "priceDelta": 0},
-            {"name": "Double Fillet Grand Platter", "priceDelta": to_usd(600)}
+            {"name": "Double Fillet Grand Platter", "priceDelta": to_pkr(600)}
         ],
         "addons": [
-            {"name": "Extra Creamy Truffle Mushroom Sauce", "price": to_usd(220)},
-            {"name": "Garlic Butter Sautéed Mushrooms", "price": to_usd(250)}
+            {"name": "Extra Creamy Truffle Mushroom Sauce", "price": to_pkr(220)},
+            {"name": "Garlic Butter Sautéed Mushrooms", "price": to_pkr(250)}
         ]
     },
     {
@@ -898,7 +892,7 @@ items = [
         "title": "51. Black Peppercorn Chicken Steak",
         "subtitle": "Classic pepper-marinated chicken in rich peppercorn reduction",
         "category": "steaks",
-        "price": to_usd(1500),
+        "price": to_pkr(1500),
         "rating": 4.85,
         "reviewsCount": 78,
         "badge": "Classic Pepper",
@@ -917,7 +911,7 @@ items = [
         "title": "52. Smoky Barbecue Chicken Steak",
         "subtitle": "Chargrilled chicken glazed with bold, house-style smoky BBQ sauce",
         "category": "steaks",
-        "price": to_usd(1500),
+        "price": to_pkr(1500),
         "rating": 4.88,
         "reviewsCount": 86,
         "badge": "Smoky Glaze",
@@ -936,7 +930,7 @@ items = [
         "title": "Fire-Glazed Salsa Chicken Steak",
         "subtitle": "Smoky, zesty & sizzling to perfection",
         "category": "steaks",
-        "price": to_usd(1500),
+        "price": to_pkr(1500),
         "rating": 4.8,
         "reviewsCount": 98,
         "badge": "Spicy Favorite",
@@ -959,7 +953,7 @@ items = [
         "title": "60. Smoky BBQ Chicken Pizza",
         "subtitle": "Wood-fired crust with smoky chicken, onions & mozzarella",
         "category": "pizza",
-        "price": to_usd(850),
+        "price": to_pkr(850),
         "rating": 4.9,
         "reviewsCount": 115,
         "badge": "Pizza Star",
@@ -972,17 +966,17 @@ items = [
         "prepTime": "15-20 mins",
         "portions": [
             {"name": 'Small 7" (1-Person)', "priceDelta": 0},
-            {"name": 'Medium 10" (2-Person)', "priceDelta": to_usd(1340) - to_usd(850)},
-            {"name": 'Large 13" (4-Person)', "priceDelta": to_usd(1960) - to_usd(850)}
+            {"name": 'Medium 10" (2-Person)', "priceDelta": to_pkr(1340) - to_pkr(850)},
+            {"name": 'Large 13" (4-Person)', "priceDelta": to_pkr(1960) - to_pkr(850)}
         ],
-        "addons": [{"name": "Extra Mozzarella Melt", "price": to_usd(200)}]
+        "addons": [{"name": "Extra Mozzarella Melt", "price": to_pkr(200)}]
     },
     {
         "id": "chargrilled-tikka-pizza",
         "title": "62. Chargrilled Tikka Pizza",
         "subtitle": "Desi tikka spices with a golden cheese crust and mild heat",
         "category": "pizza",
-        "price": to_usd(780),
+        "price": to_pkr(780),
         "rating": 4.92,
         "reviewsCount": 130,
         "badge": "Desi Fusion",
@@ -995,17 +989,17 @@ items = [
         "prepTime": "15-20 mins",
         "portions": [
             {"name": 'Small 7" (1-Person)', "priceDelta": 0},
-            {"name": 'Medium 10" (2-Person)', "priceDelta": to_usd(1205) - to_usd(780)},
-            {"name": 'Large 13" (4-Person)', "priceDelta": to_usd(1810) - to_usd(780)}
+            {"name": 'Medium 10" (2-Person)', "priceDelta": to_pkr(1205) - to_pkr(780)},
+            {"name": 'Large 13" (4-Person)', "priceDelta": to_pkr(1810) - to_pkr(780)}
         ],
-        "addons": [{"name": "Stuffed Cheesy Crust", "price": to_usd(250)}]
+        "addons": [{"name": "Stuffed Cheesy Crust", "price": to_pkr(250)}]
     },
     {
         "id": "mexican-fajita-chicken-pizza",
         "title": "63. Mexican Fajita Chicken Pizza",
         "subtitle": "Fajita-spiced chicken, peppers, and tangy salsa drizzle",
         "category": "pizza",
-        "price": to_usd(780),
+        "price": to_pkr(780),
         "rating": 4.88,
         "reviewsCount": 94,
         "badge": "Fiesta Flavor",
@@ -1018,8 +1012,8 @@ items = [
         "prepTime": "15-20 mins",
         "portions": [
             {"name": 'Small 7" (1-Person)', "priceDelta": 0},
-            {"name": 'Medium 10" (2-Person)', "priceDelta": to_usd(1205) - to_usd(780)},
-            {"name": 'Large 13" (4-Person)', "priceDelta": to_usd(1810) - to_usd(780)}
+            {"name": 'Medium 10" (2-Person)', "priceDelta": to_pkr(1205) - to_pkr(780)},
+            {"name": 'Large 13" (4-Person)', "priceDelta": to_pkr(1810) - to_pkr(780)}
         ],
         "addons": []
     },
@@ -1028,7 +1022,7 @@ items = [
         "title": "66. Chef's Signature Shangrilla Pizza",
         "subtitle": "House special layered with premium toppings and secret sauce",
         "category": "pizza",
-        "price": to_usd(860),
+        "price": to_pkr(860),
         "rating": 4.96,
         "reviewsCount": 150,
         "badge": "Chef Special",
@@ -1041,10 +1035,10 @@ items = [
         "prepTime": "18-20 mins",
         "portions": [
             {"name": 'Small 7" (1-Person)', "priceDelta": 0},
-            {"name": 'Medium 10" (2-Person)', "priceDelta": to_usd(1370) - to_usd(860)},
-            {"name": 'Large 13" (4-Person)', "priceDelta": to_usd(1905) - to_usd(860)}
+            {"name": 'Medium 10" (2-Person)', "priceDelta": to_pkr(1370) - to_pkr(860)},
+            {"name": 'Large 13" (4-Person)', "priceDelta": to_pkr(1905) - to_pkr(860)}
         ],
-        "addons": [{"name": "Garlic Mayo Dip Sauce", "price": to_usd(80)}]
+        "addons": [{"name": "Garlic Mayo Dip Sauce", "price": to_pkr(80)}]
     },
 
     # -------------------------------------------------------------
@@ -1055,7 +1049,7 @@ items = [
         "title": "72. Achari Spiced Chicken",
         "subtitle": "Tender chicken simmered in a tangy blend of pickling spices",
         "category": "handi",
-        "price": to_usd(1890),
+        "price": to_pkr(1890),
         "rating": 4.9,
         "reviewsCount": 85,
         "badge": "Tangy Desi",
@@ -1067,14 +1061,14 @@ items = [
         "spiceLevel": "Spicy & Tangy (2.5/3)",
         "prepTime": "25-30 mins",
         "portions": [{"name": "Standard Handi Portion (Serves 2-3)", "priceDelta": 0}],
-        "addons": [{"name": "Roghni Naan", "price": to_usd(100)}]
+        "addons": [{"name": "Roghni Naan", "price": to_pkr(100)}]
     },
     {
         "id": "classic-chicken-karahi",
         "title": "74. Classic Chicken Karahi",
         "subtitle": "Cooked in fresh tomato, ginger, and green chili masala",
         "category": "handi",
-        "price": to_usd(2400),
+        "price": to_pkr(2400),
         "rating": 4.92,
         "reviewsCount": 165,
         "badge": "Karahi Classic",
@@ -1087,16 +1081,16 @@ items = [
         "prepTime": "25-30 mins",
         "portions": [
             {"name": "Full Karahi (Serves 3-4)", "priceDelta": 0},
-            {"name": "Half Karahi (Serves 1-2)", "priceDelta": to_usd(1600) - to_usd(2400)}
+            {"name": "Half Karahi (Serves 1-2)", "priceDelta": to_pkr(1600) - to_pkr(2400)}
         ],
-        "addons": [{"name": "Extra Desi Makhan Ghee Dollop", "price": to_usd(120)}]
+        "addons": [{"name": "Extra Desi Makhan Ghee Dollop", "price": to_pkr(120)}]
     },
     {
         "id": "chefs-handcrafted-chicken-handi",
         "title": "76. Chef's Handcrafted Chicken Handi",
         "subtitle": "Rich and creamy handi-style boneless chicken with velvety finish",
         "category": "handi",
-        "price": to_usd(2880),
+        "price": to_pkr(2880),
         "rating": 4.98,
         "reviewsCount": 210,
         "badge": "Handi Royal",
@@ -1109,16 +1103,16 @@ items = [
         "prepTime": "25-30 mins",
         "portions": [
             {"name": "Full Handi (Serves 3-4)", "priceDelta": 0},
-            {"name": "Half Handi (Serves 1-2)", "priceDelta": to_usd(1850) - to_usd(2880)}
+            {"name": "Half Handi (Serves 1-2)", "priceDelta": to_pkr(1850) - to_pkr(2880)}
         ],
-        "addons": [{"name": "Garlic Naan Pair", "price": to_usd(240)}]
+        "addons": [{"name": "Garlic Naan Pair", "price": to_pkr(240)}]
     },
     {
         "id": "ginger-infused-chicken",
         "title": "78. Ginger-Infused Chicken",
         "subtitle": "Pan-seared chicken tossed with ginger and bold Desi flavors",
         "category": "handi",
-        "price": to_usd(1990),
+        "price": to_pkr(1990),
         "rating": 4.88,
         "reviewsCount": 64,
         "badge": "Ginger Aromatic",
@@ -1137,7 +1131,7 @@ items = [
         "title": "79. Smoked Chicken Bartha",
         "subtitle": "Pulled chicken slow-cooked in roasted spices and smoky tomato gravy",
         "category": "handi",
-        "price": to_usd(1990),
+        "price": to_pkr(1990),
         "rating": 4.9,
         "reviewsCount": 72,
         "badge": "Smoked Delicacy",
@@ -1156,7 +1150,7 @@ items = [
         "title": "81. Chicken Jalfrezi",
         "subtitle": "Stir-fried chicken with bell peppers, onions, and tomato glaze",
         "category": "handi",
-        "price": to_usd(2140),
+        "price": to_pkr(2140),
         "rating": 4.88,
         "reviewsCount": 80,
         "badge": "Wok Glaze",
@@ -1175,7 +1169,7 @@ items = [
         "title": "82. Chicken Taka Tak",
         "subtitle": "Sizzling street-style favorite, minced on high flame with masala",
         "category": "handi",
-        "price": to_usd(2140),
+        "price": to_pkr(2140),
         "rating": 4.92,
         "reviewsCount": 115,
         "badge": "Street Sizzle",
@@ -1194,7 +1188,7 @@ items = [
         "title": "83. Butter Chicken Masala",
         "subtitle": "Succulent chicken simmered in rich buttery tomato sauce with cream",
         "category": "handi",
-        "price": to_usd(2300),
+        "price": to_pkr(2300),
         "rating": 4.96,
         "reviewsCount": 145,
         "badge": "Creamy Indulgence",
@@ -1206,14 +1200,14 @@ items = [
         "spiceLevel": "Mild & Sweet Spiced",
         "prepTime": "22-25 mins",
         "portions": [{"name": "Full Bowl (Serves 2-3)", "priceDelta": 0}],
-        "addons": [{"name": "Hot Roghni Naan", "price": to_usd(100)}]
+        "addons": [{"name": "Hot Roghni Naan", "price": to_pkr(100)}]
     },
     {
         "id": "mutton-leg-steam-roast",
         "title": "89. Mutton Leg Steam Roast House Special",
         "subtitle": "Whole prime mutton leg marinated and slow-steamed to falling-off-the-bone tenderness",
         "category": "handi",
-        "price": to_usd(6100),
+        "price": to_pkr(6100),
         "rating": 5.0,
         "reviewsCount": 95,
         "badge": "Grand Royal",
@@ -1225,14 +1219,14 @@ items = [
         "spiceLevel": "Mild to Aromatic",
         "prepTime": "45-60 mins",
         "portions": [{"name": "Whole Mutton Leg Roast (Serves 4-6)", "priceDelta": 0}],
-        "addons": [{"name": "Extra Basmati Zeera Rice Platter", "price": to_usd(500)}]
+        "addons": [{"name": "Extra Basmati Zeera Rice Platter", "price": to_pkr(500)}]
     },
     {
         "id": "traditional-mutton-karahi",
         "title": "90. Traditional Mutton Karahi",
         "subtitle": "Classic karahi-style mutton cooked in rich tomato and garlic masala",
         "category": "handi",
-        "price": to_usd(4050),
+        "price": to_pkr(4050),
         "rating": 4.95,
         "reviewsCount": 138,
         "badge": "Mutton Classic",
@@ -1245,7 +1239,7 @@ items = [
         "prepTime": "35-40 mins",
         "portions": [
             {"name": "Full Karahi (Serves 3-4)", "priceDelta": 0},
-            {"name": "Half Karahi (Serves 1-2)", "priceDelta": to_usd(2650) - to_usd(4050)}
+            {"name": "Half Karahi (Serves 1-2)", "priceDelta": to_pkr(2650) - to_pkr(4050)}
         ],
         "addons": []
     },
@@ -1254,7 +1248,7 @@ items = [
         "title": "92. Mutton Handi Supreme",
         "subtitle": "Creamy, slow-simmered mutton handi with balanced Desi spices",
         "category": "handi",
-        "price": to_usd(4780),
+        "price": to_pkr(4780),
         "rating": 4.98,
         "reviewsCount": 120,
         "badge": "Royal Mutton",
@@ -1267,7 +1261,7 @@ items = [
         "prepTime": "35-40 mins",
         "portions": [
             {"name": "Full Handi (Serves 3-4)", "priceDelta": 0},
-            {"name": "Half Handi (Serves 1-2)", "priceDelta": to_usd(3050) - to_usd(4780)}
+            {"name": "Half Handi (Serves 1-2)", "priceDelta": to_pkr(3050) - to_pkr(4780)}
         ],
         "addons": []
     },
@@ -1276,7 +1270,7 @@ items = [
         "title": "94. Mutton Ginger With Bone",
         "subtitle": "Bone-in mutton infused with fresh ginger and mild spices",
         "category": "handi",
-        "price": to_usd(2650),
+        "price": to_pkr(2650),
         "rating": 4.88,
         "reviewsCount": 58,
         "badge": "Ginger Mutton",
@@ -1295,7 +1289,7 @@ items = [
         "title": "95. Mutton Green Chilli Lemon",
         "subtitle": "Zesty mutton cooked with green chilies and fresh lemon",
         "category": "handi",
-        "price": to_usd(4050),
+        "price": to_pkr(4050),
         "rating": 4.94,
         "reviewsCount": 65,
         "badge": "Zesty Spice",
@@ -1314,7 +1308,7 @@ items = [
         "title": "97. Brain Masala (Mughlai Style)",
         "subtitle": "Classic delicacy tossed in Desi masala with ghee and herbs",
         "category": "handi",
-        "price": to_usd(2250),
+        "price": to_pkr(2250),
         "rating": 4.9,
         "reviewsCount": 74,
         "badge": "Mughlai Delicacy",
@@ -1333,7 +1327,7 @@ items = [
         "title": "98. Shahi Daal Tadka",
         "subtitle": "Creamy lentils tempered with garlic butter and mild spices",
         "category": "handi",
-        "price": to_usd(790),
+        "price": to_pkr(790),
         "rating": 4.85,
         "reviewsCount": 85,
         "badge": "Vegetarian Comfort",
@@ -1352,7 +1346,7 @@ items = [
         "title": "99. Plain Mixed Vegetable",
         "subtitle": "Seasonal vegetables sauteed with light Desi seasoning",
         "category": "handi",
-        "price": to_usd(870),
+        "price": to_pkr(870),
         "rating": 4.8,
         "reviewsCount": 52,
         "badge": "Farm Fresh",
@@ -1371,7 +1365,7 @@ items = [
         "title": "100. Chicken Hari Mirch Masala",
         "subtitle": "Zesty chicken cooked with green chillies in rich aromatic spices",
         "category": "handi",
-        "price": to_usd(2035),
+        "price": to_pkr(2035),
         "rating": 5.0,
         "reviewsCount": 215,
         "badge": "Royal Special",
@@ -1384,9 +1378,9 @@ items = [
         "prepTime": "25-30 mins",
         "portions": [
             {"name": "Half Handi (Serves 1-2)", "priceDelta": 0},
-            {"name": "Full Handi (Serves 3-4)", "priceDelta": to_usd(1000)}
+            {"name": "Full Handi (Serves 3-4)", "priceDelta": to_pkr(1000)}
         ],
-        "addons": [{"name": "Hot Roghani Naan Pairing", "price": to_usd(100)}]
+        "addons": [{"name": "Hot Roghani Naan Pairing", "price": to_pkr(100)}]
     },
 
     # -------------------------------------------------------------
@@ -1397,7 +1391,7 @@ items = [
         "title": "112. Dhaka-style Fried Fish (8 Pcs)",
         "subtitle": "Crisp golden fish fillets in Dhaka's signature spice blend",
         "category": "seafood",
-        "price": to_usd(3800),
+        "price": to_pkr(3800),
         "rating": 4.96,
         "reviewsCount": 118,
         "badge": "Signature Fish",
@@ -1409,14 +1403,14 @@ items = [
         "spiceLevel": "Medium Spicy",
         "prepTime": "20-25 mins",
         "portions": [{"name": "8 Pieces Platter", "priceDelta": 0}],
-        "addons": [{"name": "Extra Tartar Dip", "price": to_usd(100)}]
+        "addons": [{"name": "Extra Tartar Dip", "price": to_pkr(100)}]
     },
     {
         "id": "crispy-fish-fingers-12pcs",
         "title": "113. Crispy Fish Fingers (12 Pcs)",
         "subtitle": "Tender fish strips coated in seasoned crumbs with tartar dip",
         "category": "seafood",
-        "price": to_usd(3800),
+        "price": to_pkr(3800),
         "rating": 4.9,
         "reviewsCount": 85,
         "badge": "Crispy Favorite",
@@ -1435,7 +1429,7 @@ items = [
         "title": "115. Grilled Fish Fillet (2 Pcs)",
         "subtitle": "Chargrilled fillet brushed with olive oil and herbs",
         "category": "seafood",
-        "price": to_usd(3800),
+        "price": to_pkr(3800),
         "rating": 4.95,
         "reviewsCount": 92,
         "badge": "Healthy Grill",
@@ -1458,7 +1452,7 @@ items = [
         "title": "119. Classic Chicken Biryani",
         "subtitle": "Aromatic basmati layered with chicken and saffron masala",
         "category": "rice",
-        "price": to_usd(1100),
+        "price": to_pkr(1100),
         "rating": 4.95,
         "reviewsCount": 180,
         "badge": "Biryani Star",
@@ -1470,14 +1464,14 @@ items = [
         "spiceLevel": "Spicy & Aromatic (2/3)",
         "prepTime": "15 mins",
         "portions": [{"name": "Platter (Serves 1-2)", "priceDelta": 0}],
-        "addons": [{"name": "Mint Raita Bowl", "price": to_usd(170)}]
+        "addons": [{"name": "Mint Raita Bowl", "price": to_pkr(170)}]
     },
     {
         "id": "chicken-fried-rice",
         "title": "120. Chicken Fried Rice",
         "subtitle": "Wok-tossed basmati rice with chicken, egg, and fresh vegetables",
         "category": "rice",
-        "price": to_usd(1400),
+        "price": to_pkr(1400),
         "rating": 4.9,
         "reviewsCount": 135,
         "badge": "Wok Master",
@@ -1490,7 +1484,7 @@ items = [
         "prepTime": "15 mins",
         "portions": [
             {"name": "Full Wok Platter (Serves 3-4)", "priceDelta": 0},
-            {"name": "Half Platter (Serves 1-2)", "priceDelta": to_usd(930) - to_usd(1400)}
+            {"name": "Half Platter (Serves 1-2)", "priceDelta": to_pkr(930) - to_pkr(1400)}
         ],
         "addons": []
     },
@@ -1499,7 +1493,7 @@ items = [
         "title": "122. Chicken Masala Rice",
         "subtitle": "Spicy masala rice blended with tender chicken and Desi seasoning",
         "category": "rice",
-        "price": to_usd(1400),
+        "price": to_pkr(1400),
         "rating": 4.88,
         "reviewsCount": 94,
         "badge": "Desi Heat",
@@ -1512,7 +1506,7 @@ items = [
         "prepTime": "15 mins",
         "portions": [
             {"name": "Full Platter (Serves 3-4)", "priceDelta": 0},
-            {"name": "Half Platter (Serves 1-2)", "priceDelta": to_usd(930) - to_usd(1400)}
+            {"name": "Half Platter (Serves 1-2)", "priceDelta": to_pkr(930) - to_pkr(1400)}
         ],
         "addons": []
     },
@@ -1521,7 +1515,7 @@ items = [
         "title": "124. Egg Fried Rice",
         "subtitle": "Golden rice tossed with egg, garlic, and subtle soy hint",
         "category": "rice",
-        "price": to_usd(1200),
+        "price": to_pkr(1200),
         "rating": 4.85,
         "reviewsCount": 78,
         "badge": "Oriental Classic",
@@ -1534,7 +1528,7 @@ items = [
         "prepTime": "12 mins",
         "portions": [
             {"name": "Full Bowl (Serves 3-4)", "priceDelta": 0},
-            {"name": "Half Bowl (Serves 1-2)", "priceDelta": to_usd(780) - to_usd(1200)}
+            {"name": "Half Bowl (Serves 1-2)", "priceDelta": to_pkr(780) - to_pkr(1200)}
         ],
         "addons": []
     },
@@ -1543,7 +1537,7 @@ items = [
         "title": "126. Chicken Shashlik Rice",
         "subtitle": "Flame-grilled chicken skewers atop fried rice with tangy sauce",
         "category": "rice",
-        "price": to_usd(1930),
+        "price": to_pkr(1930),
         "rating": 4.95,
         "reviewsCount": 110,
         "badge": "Shashlik Special",
@@ -1562,7 +1556,7 @@ items = [
         "title": "127. Vegetable Fried Rice",
         "subtitle": "Colorful stir-fried vegetables with seasoned basmati",
         "category": "rice",
-        "price": to_usd(1200),
+        "price": to_pkr(1200),
         "rating": 4.8,
         "reviewsCount": 60,
         "badge": "Vegetarian",
@@ -1575,7 +1569,7 @@ items = [
         "prepTime": "12 mins",
         "portions": [
             {"name": "Full Platter (Serves 3-4)", "priceDelta": 0},
-            {"name": "Half Platter (Serves 1-2)", "priceDelta": to_usd(780) - to_usd(1200)}
+            {"name": "Half Platter (Serves 1-2)", "priceDelta": to_pkr(780) - to_pkr(1200)}
         ],
         "addons": []
     },
@@ -1588,7 +1582,7 @@ items = [
         "title": "135. Kalwanji Naan",
         "subtitle": "Soft naan sprinkled with black nigella seeds for nutty aroma",
         "category": "naans",
-        "price": to_usd(120),
+        "price": to_pkr(120),
         "rating": 4.88,
         "reviewsCount": 92,
         "badge": "Aromatic Naan",
@@ -1607,7 +1601,7 @@ items = [
         "title": "136. Traditional Roghni Sesame Naan",
         "subtitle": "Buttery, golden naan baked to delicate perfection",
         "category": "naans",
-        "price": to_usd(100),
+        "price": to_pkr(100),
         "rating": 4.95,
         "reviewsCount": 180,
         "badge": "House Favorite",
@@ -1620,7 +1614,7 @@ items = [
         "prepTime": "8 mins",
         "portions": [
             {"name": "Single Roghni Naan", "priceDelta": 0},
-            {"name": "Pack of 3 Naans", "priceDelta": to_usd(200)}
+            {"name": "Pack of 3 Naans", "priceDelta": to_pkr(200)}
         ],
         "addons": []
     },
@@ -1629,7 +1623,7 @@ items = [
         "title": "137. Ginger Naan",
         "subtitle": "Fresh ginger and mild aromatic spice",
         "category": "naans",
-        "price": to_usd(120),
+        "price": to_pkr(120),
         "rating": 4.85,
         "reviewsCount": 65,
         "badge": "Zingy Crust",
@@ -1648,7 +1642,7 @@ items = [
         "title": "138. Garlic Naan",
         "subtitle": "Signature tandoori naan infused with roasted garlic butter",
         "category": "naans",
-        "price": to_usd(120),
+        "price": to_pkr(120),
         "rating": 4.95,
         "reviewsCount": 150,
         "badge": "Top Seller",
@@ -1667,7 +1661,7 @@ items = [
         "title": "139. Lahori Kulcha",
         "subtitle": "Crisp and fluffy flatbread, a Lahori classic from the Tandoor",
         "category": "naans",
-        "price": to_usd(70),
+        "price": to_pkr(70),
         "rating": 4.88,
         "reviewsCount": 110,
         "badge": "Lahori Classic",
@@ -1686,7 +1680,7 @@ items = [
         "title": "140. Tandoori Paratha",
         "subtitle": "Flaky whole-wheat paratha cooked with desi ghee in the tandoor",
         "category": "naans",
-        "price": to_usd(120),
+        "price": to_pkr(120),
         "rating": 4.9,
         "reviewsCount": 105,
         "badge": "Desi Ghee",
@@ -1705,7 +1699,7 @@ items = [
         "title": "141. Achari Paratha",
         "subtitle": "Tangy, spiced paratha infused with traditional achar flavors",
         "category": "naans",
-        "price": to_usd(145),
+        "price": to_pkr(145),
         "rating": 4.85,
         "reviewsCount": 75,
         "badge": "Tangy Twist",
@@ -1724,7 +1718,7 @@ items = [
         "title": "142. Tandoori Roti (Per Head)",
         "subtitle": "Freshly cooked whole-wheat roti straight from the clay oven",
         "category": "naans",
-        "price": to_usd(140),
+        "price": to_pkr(140),
         "rating": 4.8,
         "reviewsCount": 130,
         "badge": "Clay Oven",
@@ -1743,7 +1737,7 @@ items = [
         "title": "Special Artisan Tandoor Naans Platter",
         "subtitle": "Four Master Breads Straight from the Clay Oven",
         "category": "naans",
-        "price": to_usd(499),
+        "price": to_pkr(499),
         "rating": 4.9,
         "reviewsCount": 184,
         "badge": "Signature Bake",
@@ -1766,7 +1760,7 @@ items = [
         "title": "151. Crispy Chicken Drumsticks (8 Pcs)",
         "subtitle": "Golden-fried chicken drumsticks glazed in mild Oriental spice",
         "category": "chinese",
-        "price": to_usd(2420),
+        "price": to_pkr(2420),
         "rating": 4.92,
         "reviewsCount": 88,
         "badge": "Oriental Crunch",
@@ -1779,7 +1773,7 @@ items = [
         "prepTime": "20 mins",
         "portions": [
             {"name": "8 Pieces Platter", "priceDelta": 0},
-            {"name": "Half Portion (4 Pcs)", "priceDelta": to_usd(1450) - to_usd(2420)}
+            {"name": "Half Portion (4 Pcs)", "priceDelta": to_pkr(1450) - to_pkr(2420)}
         ],
         "addons": []
     },
@@ -1788,7 +1782,7 @@ items = [
         "title": "153. Chicken Chilli Dry",
         "subtitle": "Crispy fried chicken infused with signature chili blend and scallions",
         "category": "chinese",
-        "price": to_usd(2000),
+        "price": to_pkr(2000),
         "rating": 4.95,
         "reviewsCount": 160,
         "badge": "Chinese Favorite",
@@ -1800,14 +1794,14 @@ items = [
         "spiceLevel": "Spicy (2.5/3)",
         "prepTime": "18 mins",
         "portions": [{"name": "Standard Wok Plate (Serves 2-3)", "priceDelta": 0}],
-        "addons": [{"name": "Egg Fried Rice Pairing", "price": to_usd(780)}]
+        "addons": [{"name": "Egg Fried Rice Pairing", "price": to_pkr(780)}]
     },
     {
         "id": "chicken-chow-mein",
         "title": "154. Chicken Chow Mein",
         "subtitle": "Classic noodles stir-fried with chicken, vegetables, and soy glaze",
         "category": "chinese",
-        "price": to_usd(1100),
+        "price": to_pkr(1100),
         "rating": 4.9,
         "reviewsCount": 140,
         "badge": "Classic Noodles",
@@ -1826,7 +1820,7 @@ items = [
         "title": "155. Chicken Manchurian",
         "subtitle": "Crispy chicken bites in a tangy Indo-Chinese Manchurian sauce",
         "category": "chinese",
-        "price": to_usd(2000),
+        "price": to_pkr(2000),
         "rating": 4.92,
         "reviewsCount": 155,
         "badge": "Saucy Star",
@@ -1838,14 +1832,14 @@ items = [
         "spiceLevel": "Medium Tangy Spicy",
         "prepTime": "18 mins",
         "portions": [{"name": "Standard Bowl (Serves 2-3)", "priceDelta": 0}],
-        "addons": [{"name": "Fried Rice Pairing", "price": to_usd(780)}]
+        "addons": [{"name": "Fried Rice Pairing", "price": to_pkr(780)}]
     },
     {
         "id": "sweet-and-sour-pineapple-chicken",
         "title": "156. Sweet & Sour Pineapple Chicken",
         "subtitle": "Juicy chicken tossed in sweet and tangy pineapple reduction",
         "category": "chinese",
-        "price": to_usd(2280),
+        "price": to_pkr(2280),
         "rating": 4.88,
         "reviewsCount": 85,
         "badge": "Sweet & Tangy",
@@ -1864,7 +1858,7 @@ items = [
         "title": "157. Chicken With Almonds",
         "subtitle": "Stir-fried chicken with roasted almonds and aromatic soy glaze",
         "category": "chinese",
-        "price": to_usd(2090),
+        "price": to_pkr(2090),
         "rating": 4.9,
         "reviewsCount": 72,
         "badge": "Nutty Glaze",
@@ -1883,7 +1877,7 @@ items = [
         "title": "158. Chicken In Oyster Sauce",
         "subtitle": "Succulent chicken in a savory oyster-infused brown sauce",
         "category": "chinese",
-        "price": to_usd(2090),
+        "price": to_pkr(2090),
         "rating": 4.88,
         "reviewsCount": 65,
         "badge": "Savory Umami",
@@ -1902,7 +1896,7 @@ items = [
         "title": "159. Chicken With Cashew Nuts",
         "subtitle": "Wok-tossed chicken and cashews in flavorful ginger-garlic sauce",
         "category": "chinese",
-        "price": to_usd(2240),
+        "price": to_pkr(2240),
         "rating": 4.94,
         "reviewsCount": 98,
         "badge": "Cashew Crunch",
@@ -1921,7 +1915,7 @@ items = [
         "title": "160. Honey Glazed Chicken Wings (12 Pcs)",
         "subtitle": "Crispy wings coated in sweet honey and chili glaze",
         "category": "chinese",
-        "price": to_usd(1600),
+        "price": to_pkr(1600),
         "rating": 4.9,
         "reviewsCount": 82,
         "badge": "Honey Glazed",
@@ -1940,7 +1934,7 @@ items = [
         "title": "161. Garlic & Mushroom Chicken",
         "subtitle": "Tender chicken strips sautéed with garlic and mushrooms in light soy",
         "category": "chinese",
-        "price": to_usd(1860),
+        "price": to_pkr(1860),
         "rating": 4.88,
         "reviewsCount": 64,
         "badge": "Garlic Mushroom",
@@ -1959,7 +1953,7 @@ items = [
         "title": "162. Stir-Fried Chicken with Vegetables",
         "subtitle": "Lean chicken tossed with seasonal greens and sesame hint",
         "category": "chinese",
-        "price": to_usd(1550),
+        "price": to_pkr(1550),
         "rating": 4.85,
         "reviewsCount": 58,
         "badge": "Healthy Choice",
@@ -1978,7 +1972,7 @@ items = [
         "title": "163. Beef Chilli Dry",
         "subtitle": "Spicy wok-tossed beef with garlic and green chilies",
         "category": "chinese",
-        "price": to_usd(2100),
+        "price": to_pkr(2100),
         "rating": 4.94,
         "reviewsCount": 112,
         "badge": "Spicy Beef",
@@ -2001,7 +1995,7 @@ items = [
         "title": "171. Pina Colada",
         "subtitle": "A tropical fusion of pineapple, coconut, and crushed ice bliss",
         "category": "beverages",
-        "price": to_usd(340),
+        "price": to_pkr(340),
         "rating": 4.95,
         "reviewsCount": 120,
         "badge": "Bar Special",
@@ -2020,7 +2014,7 @@ items = [
         "title": "172. Pink Lady",
         "subtitle": "Refreshing blend of citrus, grenadine, and creamy notes",
         "category": "beverages",
-        "price": to_usd(340),
+        "price": to_pkr(340),
         "rating": 4.9,
         "reviewsCount": 75,
         "badge": "Berry Splash",
@@ -2039,7 +2033,7 @@ items = [
         "title": "173. Spanish Margarita",
         "subtitle": "Zesty lemon and tangy orange balanced with a salty rim",
         "category": "beverages",
-        "price": to_usd(330),
+        "price": to_pkr(330),
         "rating": 4.92,
         "reviewsCount": 94,
         "badge": "Citrus Zest",
@@ -2052,7 +2046,7 @@ items = [
         "prepTime": "5 mins",
         "portions": [
             {"name": "Standard Glass", "priceDelta": 0},
-            {"name": "Diet (Sugar-Free)", "priceDelta": to_usd(340) - to_usd(330)}
+            {"name": "Diet (Sugar-Free)", "priceDelta": to_pkr(340) - to_pkr(330)}
         ],
         "addons": []
     },
@@ -2061,7 +2055,7 @@ items = [
         "title": "174. Classic Lemonade",
         "subtitle": "Freshly squeezed lemon with chilled soda and mint hint",
         "category": "beverages",
-        "price": to_usd(425),
+        "price": to_pkr(425),
         "rating": 4.95,
         "reviewsCount": 115,
         "badge": "Minty Fresh",
@@ -2080,7 +2074,7 @@ items = [
         "title": "186. Kiwi Lemonade",
         "subtitle": "Vibrant green kiwi blend with tangy lemon",
         "category": "beverages",
-        "price": to_usd(275),
+        "price": to_pkr(275),
         "rating": 4.88,
         "reviewsCount": 65,
         "badge": "Kiwi Cooler",
@@ -2099,7 +2093,7 @@ items = [
         "title": "187. Fruity Mix Lemonade",
         "subtitle": "A medley of exotic fruit flavors with lime zest",
         "category": "beverages",
-        "price": to_usd(275),
+        "price": to_pkr(275),
         "rating": 4.88,
         "reviewsCount": 58,
         "badge": "Exotic Medley",
@@ -2118,7 +2112,7 @@ items = [
         "title": "188. Blue Lemonade",
         "subtitle": "Electric blue citrus cooler with a hint of mint",
         "category": "beverages",
-        "price": to_usd(275),
+        "price": to_pkr(275),
         "rating": 4.9,
         "reviewsCount": 82,
         "badge": "Electric Blue",
@@ -2137,7 +2131,7 @@ items = [
         "title": "189. Cold Drink 1 Ltr",
         "subtitle": "Refreshing carbonated beverage (Coke / Sprite / Fanta)",
         "category": "beverages",
-        "price": to_usd(220),
+        "price": to_pkr(220),
         "rating": 4.8,
         "reviewsCount": 110,
         "badge": "1 Litre Bottle",
@@ -2156,7 +2150,7 @@ items = [
         "title": "190. Mineral Water",
         "subtitle": "Pure bottled water (served chilled)",
         "category": "beverages",
-        "price": to_usd(145),
+        "price": to_pkr(145),
         "rating": 4.9,
         "reviewsCount": 120,
         "badge": "Hydration",
@@ -2175,7 +2169,7 @@ items = [
         "title": "191. Classic Soft Drinks (Regular)",
         "subtitle": "Refreshing carbonated beverages (Coke, Sprite, Fanta)",
         "category": "beverages",
-        "price": to_usd(100),
+        "price": to_pkr(100),
         "rating": 4.8,
         "reviewsCount": 140,
         "badge": "Chilled Soda",
@@ -2194,7 +2188,7 @@ items = [
         "title": "192. Cold Drink (Can)",
         "subtitle": "Chilled soft drink served in tin pack (Coke, Sprite, Fanta)",
         "category": "beverages",
-        "price": to_usd(160),
+        "price": to_pkr(160),
         "rating": 4.85,
         "reviewsCount": 95,
         "badge": "250ml Can",
@@ -2216,7 +2210,7 @@ items = [
         "title": "194. Lassi (Jug)",
         "subtitle": "Rich yogurt-based drink, smooth and refreshing (Sweet / Salted)",
         "category": "beverages",
-        "price": to_usd(450),
+        "price": to_pkr(450),
         "rating": 4.96,
         "reviewsCount": 115,
         "badge": "Desi Quencher",
@@ -2235,7 +2229,7 @@ items = [
         "title": "195. Fresh Lime",
         "subtitle": "Citrusy fresh lime cooler (Water / Sprite / Diet Sprite)",
         "category": "beverages",
-        "price": to_usd(220),
+        "price": to_pkr(220),
         "rating": 4.9,
         "reviewsCount": 105,
         "badge": "Thirst Quencher",
@@ -2254,7 +2248,7 @@ items = [
         "title": "199. Nestlé Juice",
         "subtitle": "Ready-to-serve fruit juice selection (Apple, Orange, Mango)",
         "category": "beverages",
-        "price": to_usd(180),
+        "price": to_pkr(180),
         "rating": 4.8,
         "reviewsCount": 50,
         "badge": "Fruit Juice",
@@ -2273,7 +2267,7 @@ items = [
         "title": "200. Fresh Seasonal Juice",
         "subtitle": "Extracted from fresh fruits of the season",
         "category": "beverages",
-        "price": to_usd(340),
+        "price": to_pkr(340),
         "rating": 4.95,
         "reviewsCount": 85,
         "badge": "100% Pure",
@@ -2292,7 +2286,7 @@ items = [
         "title": "211. Shangrilla Gourmet Milkshakes",
         "subtitle": "Thick ice cream shakes (Oreo, Vanilla, Strawberry, Chocolate)",
         "category": "beverages",
-        "price": to_usd(390),
+        "price": to_pkr(390),
         "rating": 4.95,
         "reviewsCount": 140,
         "badge": "Creamy Thick",
@@ -2309,14 +2303,14 @@ items = [
             {"name": "Fresh Strawberry Shake", "priceDelta": 0},
             {"name": "Classic French Vanilla Shake", "priceDelta": 0}
         ],
-        "addons": [{"name": "Extra Whipped Cream & Fudge Drizzle", "price": to_usd(80)}]
+        "addons": [{"name": "Extra Whipped Cream & Fudge Drizzle", "price": to_pkr(80)}]
     },
     {
         "id": "signature-shangrilla-mocktails",
         "title": "Shangrilla Royal Refreshers (Pair)",
         "subtitle": "Frosty Mint Lemonade & Passionfruit Cooler",
         "category": "beverages",
-        "price": to_usd(850),
+        "price": to_pkr(850),
         "rating": 4.9,
         "reviewsCount": 74,
         "badge": "House Specialty",
@@ -2329,7 +2323,7 @@ items = [
         "prepTime": "5-7 mins",
         "portions": [
             {"name": "Twin Highball Glasses (Both Flavors)", "priceDelta": 0},
-            {"name": "Pitcher Size (Serves 4)", "priceDelta": to_usd(650)}
+            {"name": "Pitcher Size (Serves 4)", "priceDelta": to_pkr(650)}
         ],
         "addons": []
     },
@@ -2342,7 +2336,7 @@ items = [
         "title": "196. Cardamom Tea",
         "subtitle": "Infused with fragrant green cardamom pods and rich dairy milk",
         "category": "hotbrews",
-        "price": to_usd(160),
+        "price": to_pkr(160),
         "rating": 4.95,
         "reviewsCount": 110,
         "badge": "Elaichi Chai",
@@ -2361,7 +2355,7 @@ items = [
         "title": "197. Classic Tea",
         "subtitle": "Freshly brewed Pakistani tea served warm",
         "category": "hotbrews",
-        "price": to_usd(120),
+        "price": to_pkr(120),
         "rating": 4.85,
         "reviewsCount": 95,
         "badge": "Daily Karak",
@@ -2380,7 +2374,7 @@ items = [
         "title": "198. Green Tea / Kehwa",
         "subtitle": "Refreshing and light green brew for a calming finish",
         "category": "hotbrews",
-        "price": to_usd(100),
+        "price": to_pkr(100),
         "rating": 4.88,
         "reviewsCount": 80,
         "badge": "Peshawari Kehwa",
@@ -2399,7 +2393,7 @@ items = [
         "title": "208. Cappuccino",
         "subtitle": "Rich espresso topped with velvety froth and cocoa dust",
         "category": "hotbrews",
-        "price": to_usd(340),
+        "price": to_pkr(340),
         "rating": 4.9,
         "reviewsCount": 88,
         "badge": "Barista Brew",
@@ -2418,7 +2412,7 @@ items = [
         "title": "209. Café Latte",
         "subtitle": "Smooth espresso layered with steamed milk and light foam",
         "category": "hotbrews",
-        "price": to_usd(340),
+        "price": to_pkr(340),
         "rating": 4.88,
         "reviewsCount": 75,
         "badge": "Smooth Latte",
@@ -2437,7 +2431,7 @@ items = [
         "title": "210. Hot Chocolate",
         "subtitle": "Silky chocolate indulgence with whipped cream topping",
         "category": "hotbrews",
-        "price": to_usd(340),
+        "price": to_pkr(340),
         "rating": 4.95,
         "reviewsCount": 90,
         "badge": "Chocolate Hug",
@@ -2460,7 +2454,7 @@ items = [
         "title": "201. Premium Ice Cream",
         "subtitle": "Kulfa, Vanilla, Strawberry, Mango, or Chocolate",
         "category": "desserts",
-        "price": to_usd(240),
+        "price": to_pkr(240),
         "rating": 4.9,
         "reviewsCount": 110,
         "badge": "Double Scoop",
@@ -2473,7 +2467,7 @@ items = [
         "prepTime": "3 mins",
         "portions": [
             {"name": "Double Scoop", "priceDelta": 0},
-            {"name": "Single Scoop", "priceDelta": to_usd(180) - to_usd(240)}
+            {"name": "Single Scoop", "priceDelta": to_pkr(180) - to_pkr(240)}
         ],
         "addons": []
     },
@@ -2482,7 +2476,7 @@ items = [
         "title": "203. Kulfa Falooda",
         "subtitle": "Classic Desi delight with kulfa, vermicelli, and rose syrup",
         "category": "desserts",
-        "price": to_usd(300),
+        "price": to_pkr(300),
         "rating": 4.98,
         "reviewsCount": 135,
         "badge": "Desi Heritage",
@@ -2501,7 +2495,7 @@ items = [
         "title": "204. Gajar Halwa (Seasonal)",
         "subtitle": "Classic carrot halwa slow-cooked in pure ghee and milk",
         "category": "desserts",
-        "price": to_usd(300),
+        "price": to_pkr(300),
         "rating": 4.95,
         "reviewsCount": 125,
         "badge": "Winter Warmth",
@@ -2513,14 +2507,14 @@ items = [
         "spiceLevel": "Sweet",
         "prepTime": "5 mins",
         "portions": [{"name": "Warm Bowl", "priceDelta": 0}],
-        "addons": [{"name": "Khoya Mawa Topping", "price": to_usd(80)}]
+        "addons": [{"name": "Khoya Mawa Topping", "price": to_pkr(80)}]
     },
     {
         "id": "kheer-custard-seasonal",
         "title": "205. Kheer / Custard (Seasonal)",
         "subtitle": "Traditional rice pudding or vanilla custard, served chilled",
         "category": "desserts",
-        "price": to_usd(300),
+        "price": to_pkr(300),
         "rating": 4.9,
         "reviewsCount": 85,
         "badge": "Clay Pot Kheer",
@@ -2539,7 +2533,7 @@ items = [
         "title": "206. Lab-e-Shireen (Seasonal)",
         "subtitle": "Creamy milk dessert with fruits, jelly, and vermicelli",
         "category": "desserts",
-        "price": to_usd(325),
+        "price": to_pkr(325),
         "rating": 4.92,
         "reviewsCount": 94,
         "badge": "Festive Sweet",
@@ -2558,7 +2552,7 @@ items = [
         "title": "207. Gulab Jamun",
         "subtitle": "Soft, syrup-soaked milk dumplings served warm",
         "category": "desserts",
-        "price": to_usd(150),
+        "price": to_pkr(150),
         "rating": 4.95,
         "reviewsCount": 140,
         "badge": "Warm Classic",
@@ -2577,7 +2571,7 @@ items = [
         "title": "215. Molten Lava Cake",
         "subtitle": "Warm chocolate cake with gooey molten center, served with ice cream",
         "category": "desserts",
-        "price": to_usd(540),
+        "price": to_pkr(540),
         "rating": 4.98,
         "reviewsCount": 165,
         "badge": "Decadent Star",
@@ -2596,7 +2590,7 @@ items = [
         "title": "216. Chocolate Brownie / Walnut Brownie",
         "subtitle": "Rich fudgy brownie with crisp crust and soft heart",
         "category": "desserts",
-        "price": to_usd(280),
+        "price": to_pkr(280),
         "rating": 4.9,
         "reviewsCount": 110,
         "badge": "Fudgy Bake",
@@ -2611,14 +2605,14 @@ items = [
             {"name": "Chocolate Brownie", "priceDelta": 0},
             {"name": "Walnut Brownie (with Crunchy Walnuts)", "priceDelta": 0}
         ],
-        "addons": [{"name": "Vanilla Ice Cream Scoop", "price": to_usd(180)}]
+        "addons": [{"name": "Vanilla Ice Cream Scoop", "price": to_pkr(180)}]
     },
     {
         "id": "assorted-pastries-cupcakes",
         "title": "218. Assorted Pastries & Cupcakes",
         "subtitle": "Freshly baked pastries with daily chef's selection",
         "category": "desserts",
-        "price": to_usd(240),
+        "price": to_pkr(240),
         "rating": 4.88,
         "reviewsCount": 85,
         "badge": "Bakery Treats",
@@ -2640,7 +2634,7 @@ items = [
         "title": "220. Chocolate Pops",
         "subtitle": "Bite-sized chocolate-coated cake pops for a sweet finish",
         "category": "desserts",
-        "price": to_usd(250),
+        "price": to_pkr(250),
         "rating": 4.85,
         "reviewsCount": 60,
         "badge": "Sweet Bites",
